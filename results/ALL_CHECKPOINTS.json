@@ -1,0 +1,730 @@
+[
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\test_real_qlin.pt",
+    "size_kb": 5621486.5
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\test_synthetic_ae.pt",
+    "size_kb": 320120.0
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\data\\real_noise_pool.pt",
+    "size_kb": 624611.3
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\data\\test_real_qlin.pt",
+    "size_kb": 5621486.3
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\data\\test_real_qlin_clean.pt",
+    "size_kb": 16017.6
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\data\\test_real_qlin_noisy.pt",
+    "size_kb": 80001.7
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\data\\test_real_qlin_snr_labels.pt",
+    "size_kb": 40.9
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\data\\test_synthetic_ae.pt",
+    "size_kb": 320041.5
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\baseline_unet\\best.pt",
+    "size_kb": 10647.8
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-FULL\\checkpoints\\best.pt",
+    "size_kb": 35470.7
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-FULL\\checkpoints\\best_demo.pt",
+    "size_kb": 12052.3
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-FULL\\checkpoints\\best_final.pt",
+    "size_kb": 12052.5
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-FULL\\checkpoints\\checkpoint_epoch0010.pt",
+    "size_kb": 35506.5
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-FULL\\checkpoints\\checkpoint_epoch0020.pt",
+    "size_kb": 35507.1
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-FULL\\checkpoints\\checkpoint_epoch0030.pt",
+    "size_kb": 35507.6
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-FULL\\checkpoints\\checkpoint_epoch0040.pt",
+    "size_kb": 35508.1
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-FULL\\checkpoints\\checkpoint_epoch0050.pt",
+    "size_kb": 35508.7
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-FULL\\checkpoints\\checkpoint_epoch0060.pt",
+    "size_kb": 35509.2
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-FULL\\checkpoints\\checkpoint_epoch0070.pt",
+    "size_kb": 35509.7
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-FULL\\checkpoints\\checkpoint_epoch0080.pt",
+    "size_kb": 35510.3
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-FULL\\checkpoints\\checkpoint_epoch0090.pt",
+    "size_kb": 35510.9
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-FULL\\checkpoints\\checkpoint_epoch0100.pt",
+    "size_kb": 35511.4
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-FULL\\checkpoints\\checkpoint_epoch0110.pt",
+    "size_kb": 35511.9
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-FULL\\checkpoints\\interrupt.pt",
+    "size_kb": 35497.1
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-FULL-LossB\\checkpoints\\best.pt",
+    "size_kb": 35471.2
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-FULL-LossB\\checkpoints\\best_demo.pt",
+    "size_kb": 12052.3
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-FULL-LossB\\checkpoints\\best_final.pt",
+    "size_kb": 12052.5
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-FULL-LossB\\checkpoints\\checkpoint_epoch0010.pt",
+    "size_kb": 35504.3
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-FULL-LossB\\checkpoints\\checkpoint_epoch0020.pt",
+    "size_kb": 35504.8
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-FULL-LossB\\checkpoints\\checkpoint_epoch0030.pt",
+    "size_kb": 35505.3
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-FULL-LossB\\checkpoints\\checkpoint_epoch0040.pt",
+    "size_kb": 35505.9
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-FULL-LossB\\checkpoints\\checkpoint_epoch0050.pt",
+    "size_kb": 35506.5
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-FULL-LossB\\checkpoints\\checkpoint_epoch0060.pt",
+    "size_kb": 35507.0
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-FULL-LossB\\checkpoints\\checkpoint_epoch0070.pt",
+    "size_kb": 35507.5
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-FULL-LossB\\checkpoints\\checkpoint_epoch0080.pt",
+    "size_kb": 35508.1
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-FULL-LossB\\checkpoints\\checkpoint_epoch0090.pt",
+    "size_kb": 35508.7
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-FULL-LossB\\checkpoints\\checkpoint_epoch0100.pt",
+    "size_kb": 35509.2
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-FULL-LossB\\checkpoints\\checkpoint_epoch0110.pt",
+    "size_kb": 35509.7
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-FULL-LossC\\checkpoints\\best.pt",
+    "size_kb": 35610.6
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-FULL-LossC\\checkpoints\\best_demo.pt",
+    "size_kb": 12052.3
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-FULL-LossC\\checkpoints\\best_final.pt",
+    "size_kb": 12052.5
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-FULL-LossC\\checkpoints\\checkpoint_epoch0010.pt",
+    "size_kb": 35645.8
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-FULL-LossC\\checkpoints\\checkpoint_epoch0020.pt",
+    "size_kb": 35646.3
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-FULL-LossC\\checkpoints\\checkpoint_epoch0030.pt",
+    "size_kb": 35646.9
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-FULL-LossC\\checkpoints\\checkpoint_epoch0040.pt",
+    "size_kb": 35647.5
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-FULL-LossC\\checkpoints\\checkpoint_epoch0050.pt",
+    "size_kb": 35648.0
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-FULL-LossC\\checkpoints\\checkpoint_epoch0060.pt",
+    "size_kb": 35648.5
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-FULL-LossC\\checkpoints\\checkpoint_epoch0070.pt",
+    "size_kb": 35649.1
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-FULL-LossC\\checkpoints\\checkpoint_epoch0080.pt",
+    "size_kb": 35649.6
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-FULL-LossC\\checkpoints\\checkpoint_epoch0090.pt",
+    "size_kb": 35650.1
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-FULL-LossC\\checkpoints\\checkpoint_epoch0100.pt",
+    "size_kb": 35650.7
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noAttn\\checkpoints\\best.pt",
+    "size_kb": 35473.3
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noAttn\\checkpoints\\best_demo.pt",
+    "size_kb": 11867.7
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noAttn\\checkpoints\\best_final.pt",
+    "size_kb": 11867.9
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noAttn\\checkpoints\\checkpoint_epoch0010.pt",
+    "size_kb": 35506.5
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noAttn\\checkpoints\\checkpoint_epoch0020.pt",
+    "size_kb": 35507.1
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noAttn\\checkpoints\\checkpoint_epoch0030.pt",
+    "size_kb": 35507.6
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noAttn\\checkpoints\\checkpoint_epoch0040.pt",
+    "size_kb": 35508.1
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noAttn\\checkpoints\\checkpoint_epoch0050.pt",
+    "size_kb": 35508.7
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noAttn\\checkpoints\\checkpoint_epoch0060.pt",
+    "size_kb": 35509.2
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noAttn\\checkpoints\\checkpoint_epoch0070.pt",
+    "size_kb": 35509.7
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noAttn\\checkpoints\\checkpoint_epoch0080.pt",
+    "size_kb": 35510.3
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noAttn\\checkpoints\\checkpoint_epoch0090.pt",
+    "size_kb": 35510.9
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noAttn\\checkpoints\\checkpoint_epoch0100.pt",
+    "size_kb": 35511.4
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noBiGRU\\checkpoints\\best.pt",
+    "size_kb": 28281.5
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noBiGRU\\checkpoints\\best_demo.pt",
+    "size_kb": 9476.4
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noBiGRU\\checkpoints\\best_final.pt",
+    "size_kb": 9476.6
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noBiGRU\\checkpoints\\checkpoint_epoch0010.pt",
+    "size_kb": 28316.5
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noBiGRU\\checkpoints\\checkpoint_epoch0020.pt",
+    "size_kb": 28317.1
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noBiGRU\\checkpoints\\checkpoint_epoch0030.pt",
+    "size_kb": 28317.6
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noBiGRU\\checkpoints\\checkpoint_epoch0040.pt",
+    "size_kb": 28318.1
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noBiGRU\\checkpoints\\checkpoint_epoch0050.pt",
+    "size_kb": 28318.7
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noBiGRU\\checkpoints\\checkpoint_epoch0060.pt",
+    "size_kb": 28319.3
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noBiGRU\\checkpoints\\checkpoint_epoch0070.pt",
+    "size_kb": 28319.8
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noBiGRU\\checkpoints\\checkpoint_epoch0080.pt",
+    "size_kb": 28320.3
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noBiGRU\\checkpoints\\checkpoint_epoch0090.pt",
+    "size_kb": 28320.9
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noBiGRU\\checkpoints\\checkpoint_epoch0100.pt",
+    "size_kb": 28321.4
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noBiGRU-noAttn\\checkpoints\\best.pt",
+    "size_kb": 27739.8
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noBiGRU-noAttn\\checkpoints\\best_demo.pt",
+    "size_kb": 9291.8
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noBiGRU-noAttn\\checkpoints\\best_final.pt",
+    "size_kb": 9292.0
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noBiGRU-noAttn\\checkpoints\\checkpoint_epoch0010.pt",
+    "size_kb": 27769.1
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noBiGRU-noAttn\\checkpoints\\checkpoint_epoch0020.pt",
+    "size_kb": 27769.6
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noBiGRU-noAttn\\checkpoints\\checkpoint_epoch0030.pt",
+    "size_kb": 27770.2
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noBiGRU-noAttn\\checkpoints\\checkpoint_epoch0040.pt",
+    "size_kb": 27770.8
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noBiGRU-noAttn\\checkpoints\\checkpoint_epoch0050.pt",
+    "size_kb": 27771.3
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noBiGRU-noAttn\\checkpoints\\checkpoint_epoch0060.pt",
+    "size_kb": 27771.8
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noBiGRU-noAttn\\checkpoints\\checkpoint_epoch0070.pt",
+    "size_kb": 27772.4
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noBiGRU-noAttn\\checkpoints\\checkpoint_epoch0080.pt",
+    "size_kb": 27772.9
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noBiGRU-noAttn\\checkpoints\\checkpoint_epoch0090.pt",
+    "size_kb": 27773.5
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noBiGRU-noAttn\\checkpoints\\checkpoint_epoch0100.pt",
+    "size_kb": 27774.0
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noMTL\\checkpoints\\best.pt",
+    "size_kb": 35405.0
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noMTL\\checkpoints\\best_demo.pt",
+    "size_kb": 11845.3
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noMTL\\checkpoints\\best_final.pt",
+    "size_kb": 11845.5
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noMTL\\checkpoints\\checkpoint_epoch0010.pt",
+    "size_kb": 35438.4
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noMTL\\checkpoints\\checkpoint_epoch0020.pt",
+    "size_kb": 35438.9
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noMTL\\checkpoints\\checkpoint_epoch0030.pt",
+    "size_kb": 35439.5
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noMTL\\checkpoints\\checkpoint_epoch0040.pt",
+    "size_kb": 35440.1
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noMTL\\checkpoints\\checkpoint_epoch0050.pt",
+    "size_kb": 35440.6
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noMTL\\checkpoints\\checkpoint_epoch0060.pt",
+    "size_kb": 35441.1
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noMTL\\checkpoints\\checkpoint_epoch0070.pt",
+    "size_kb": 35441.7
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noMTL\\checkpoints\\checkpoint_epoch0080.pt",
+    "size_kb": 35442.3
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noMTL\\checkpoints\\checkpoint_epoch0090.pt",
+    "size_kb": 35442.8
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noMTL\\checkpoints\\checkpoint_epoch0100.pt",
+    "size_kb": 35443.3
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noSwin\\checkpoints\\best.pt",
+    "size_kb": 16670.4
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noSwin\\checkpoints\\best_demo.pt",
+    "size_kb": 5591.4
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noSwin\\checkpoints\\best_final.pt",
+    "size_kb": 5591.6
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noSwin\\checkpoints\\checkpoint_epoch0010.pt",
+    "size_kb": 16701.2
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noSwin\\checkpoints\\checkpoint_epoch0020.pt",
+    "size_kb": 16701.8
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noSwin\\checkpoints\\checkpoint_epoch0030.pt",
+    "size_kb": 16702.3
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noSwin\\checkpoints\\checkpoint_epoch0040.pt",
+    "size_kb": 16702.9
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noSwin\\checkpoints\\checkpoint_epoch0050.pt",
+    "size_kb": 16703.4
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noSwin\\checkpoints\\checkpoint_epoch0060.pt",
+    "size_kb": 16703.9
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noSwin\\checkpoints\\checkpoint_epoch0070.pt",
+    "size_kb": 16704.5
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noSwin\\checkpoints\\checkpoint_epoch0080.pt",
+    "size_kb": 16705.1
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noSwin\\checkpoints\\checkpoint_epoch0090.pt",
+    "size_kb": 16705.6
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noSwin\\checkpoints\\checkpoint_epoch0100.pt",
+    "size_kb": 16706.1
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noSwin-noAttn\\checkpoints\\best.pt",
+    "size_kb": 16128.2
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noSwin-noAttn\\checkpoints\\best_demo.pt",
+    "size_kb": 5406.9
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noSwin-noAttn\\checkpoints\\best_final.pt",
+    "size_kb": 5407.0
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noSwin-noAttn\\checkpoints\\checkpoint_epoch0010.pt",
+    "size_kb": 16153.8
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noSwin-noAttn\\checkpoints\\checkpoint_epoch0020.pt",
+    "size_kb": 16154.4
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noSwin-noAttn\\checkpoints\\checkpoint_epoch0030.pt",
+    "size_kb": 16154.9
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noSwin-noAttn\\checkpoints\\checkpoint_epoch0040.pt",
+    "size_kb": 16155.4
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noSwin-noAttn\\checkpoints\\checkpoint_epoch0050.pt",
+    "size_kb": 16156.0
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noSwin-noAttn\\checkpoints\\checkpoint_epoch0060.pt",
+    "size_kb": 16156.6
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noSwin-noAttn\\checkpoints\\checkpoint_epoch0070.pt",
+    "size_kb": 16157.1
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noSwin-noAttn\\checkpoints\\checkpoint_epoch0080.pt",
+    "size_kb": 16157.6
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noSwin-noAttn\\checkpoints\\checkpoint_epoch0090.pt",
+    "size_kb": 16158.2
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noSwin-noAttn\\checkpoints\\checkpoint_epoch0100.pt",
+    "size_kb": 16158.7
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noSwin-noBiGRU\\checkpoints\\best.pt",
+    "size_kb": 12031.3
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noSwin-noBiGRU\\checkpoints\\best_demo.pt",
+    "size_kb": 4051.1
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noSwin-noBiGRU\\checkpoints\\best_final.pt",
+    "size_kb": 4051.3
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noSwin-noBiGRU\\checkpoints\\checkpoint_epoch0010.pt",
+    "size_kb": 12058.9
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noSwin-noBiGRU\\checkpoints\\checkpoint_epoch0020.pt",
+    "size_kb": 12059.4
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noSwin-noBiGRU\\checkpoints\\checkpoint_epoch0030.pt",
+    "size_kb": 12059.9
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noSwin-noBiGRU\\checkpoints\\checkpoint_epoch0040.pt",
+    "size_kb": 12060.5
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noSwin-noBiGRU\\checkpoints\\checkpoint_epoch0050.pt",
+    "size_kb": 12061.1
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noSwin-noBiGRU\\checkpoints\\checkpoint_epoch0060.pt",
+    "size_kb": 12061.6
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noSwin-noBiGRU\\checkpoints\\checkpoint_epoch0070.pt",
+    "size_kb": 12062.1
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noSwin-noBiGRU\\checkpoints\\checkpoint_epoch0080.pt",
+    "size_kb": 12062.7
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noSwin-noBiGRU\\checkpoints\\checkpoint_epoch0090.pt",
+    "size_kb": 12064.6
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noSwin-noBiGRU\\checkpoints\\checkpoint_epoch0100.pt",
+    "size_kb": 12065.1
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noWavelet\\checkpoints\\best.pt",
+    "size_kb": 35256.1
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noWavelet\\checkpoints\\best_demo.pt",
+    "size_kb": 11788.4
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noWavelet\\checkpoints\\best_final.pt",
+    "size_kb": 11788.6
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noWavelet\\checkpoints\\checkpoint_epoch0010.pt",
+    "size_kb": 35293.9
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noWavelet\\checkpoints\\checkpoint_epoch0020.pt",
+    "size_kb": 35294.4
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noWavelet\\checkpoints\\checkpoint_epoch0030.pt",
+    "size_kb": 35295.0
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noWavelet\\checkpoints\\checkpoint_epoch0040.pt",
+    "size_kb": 35295.6
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noWavelet\\checkpoints\\checkpoint_epoch0050.pt",
+    "size_kb": 35296.1
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noWavelet\\checkpoints\\checkpoint_epoch0060.pt",
+    "size_kb": 35296.6
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noWavelet\\checkpoints\\checkpoint_epoch0070.pt",
+    "size_kb": 35297.2
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noWavelet\\checkpoints\\checkpoint_epoch0080.pt",
+    "size_kb": 35297.7
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noWavelet\\checkpoints\\checkpoint_epoch0090.pt",
+    "size_kb": 35298.2
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noWavelet\\checkpoints\\checkpoint_epoch0100.pt",
+    "size_kb": 35298.8
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MWCNN-BiGRU\\checkpoints\\best.pt",
+    "size_kb": 15517.1
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MWCNN-BiGRU\\checkpoints\\best_demo.pt",
+    "size_kb": 5199.8
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MWCNN-BiGRU\\checkpoints\\best_final.pt",
+    "size_kb": 5200.0
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MWCNN-BiGRU\\checkpoints\\checkpoint_epoch0010.pt",
+    "size_kb": 15538.3
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MWCNN-BiGRU\\checkpoints\\checkpoint_epoch0020.pt",
+    "size_kb": 15538.9
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MWCNN-BiGRU\\checkpoints\\checkpoint_epoch0030.pt",
+    "size_kb": 15539.4
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MWCNN-BiGRU\\checkpoints\\checkpoint_epoch0040.pt",
+    "size_kb": 15540.0
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MWCNN-BiGRU\\checkpoints\\checkpoint_epoch0050.pt",
+    "size_kb": 15540.5
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MWCNN-BiGRU\\checkpoints\\checkpoint_epoch0060.pt",
+    "size_kb": 15541.1
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MWCNN-BiGRU\\checkpoints\\checkpoint_epoch0070.pt",
+    "size_kb": 15541.6
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MWCNN-BiGRU\\checkpoints\\checkpoint_epoch0080.pt",
+    "size_kb": 15542.2
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MWCNN-BiGRU\\checkpoints\\checkpoint_epoch0090.pt",
+    "size_kb": 15542.7
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MWCNN-BiGRU\\checkpoints\\checkpoint_epoch0100.pt",
+    "size_kb": 15543.3
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\UNet-BiGRU-Swin\\checkpoints\\best.pt",
+    "size_kb": 34103.9
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\UNet-BiGRU-Swin\\checkpoints\\best_demo.pt",
+    "size_kb": 11396.8
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\UNet-BiGRU-Swin\\checkpoints\\best_final.pt",
+    "size_kb": 11396.9
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\UNet-BiGRU-Swin\\checkpoints\\checkpoint_epoch0010.pt",
+    "size_kb": 34131.0
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\UNet-BiGRU-Swin\\checkpoints\\checkpoint_epoch0020.pt",
+    "size_kb": 34131.6
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\UNet-BiGRU-Swin\\checkpoints\\checkpoint_epoch0030.pt",
+    "size_kb": 34132.1
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\UNet-BiGRU-Swin\\checkpoints\\checkpoint_epoch0040.pt",
+    "size_kb": 34132.6
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\UNet-BiGRU-Swin\\checkpoints\\checkpoint_epoch0050.pt",
+    "size_kb": 34133.2
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\UNet-BiGRU-Swin\\checkpoints\\checkpoint_epoch0060.pt",
+    "size_kb": 34133.8
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\UNet-BiGRU-Swin\\checkpoints\\checkpoint_epoch0070.pt",
+    "size_kb": 34134.3
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\UNet-BiGRU-Swin\\checkpoints\\checkpoint_epoch0080.pt",
+    "size_kb": 34134.8
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\UNet-BiGRU-Swin\\checkpoints\\checkpoint_epoch0090.pt",
+    "size_kb": 34135.4
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\UNet-BiGRU-Swin\\checkpoints\\checkpoint_epoch0100.pt",
+    "size_kb": 34135.9
+  },
+  {
+    "path": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\wgan\\generator.pt",
+    "size_kb": 13100.1
+  }
+]

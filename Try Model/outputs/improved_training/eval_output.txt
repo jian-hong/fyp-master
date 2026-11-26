@@ -1,0 +1,38 @@
+======================================================================
+IMPROVED MODEL EVALUATION
+======================================================================
+Best Epoch: 124
+Saved NCC: 0.5299
+Saved SNR Imp: 16.11 dB
+Saved Overall Acc: 82.4%
+Class Acc: BG=96.8% | Corona=94.9% | Surface=23.9% | Internal=20.6%
+
+Evaluating:   0%|          | 0/16 [00:00<?, ?it/s]
+Evaluating:   6%|6         | 1/16 [00:06<01:33,  6.21s/it]
+Evaluating:  19%|#8        | 3/16 [00:06<00:21,  1.67s/it]
+Evaluating:  31%|###1      | 5/16 [00:06<00:09,  1.17it/s]
+Evaluating:  44%|####3     | 7/16 [00:06<00:04,  1.90it/s]
+Evaluating:  56%|#####6    | 9/16 [00:06<00:02,  2.83it/s]
+Evaluating:  69%|######8   | 11/16 [00:06<00:01,  3.94it/s]
+Evaluating:  81%|########1 | 13/16 [00:07<00:00,  5.21it/s]
+Evaluating:  94%|#########3| 15/16 [00:07<00:00,  6.53it/s]
+Evaluating: 100%|##########| 16/16 [00:07<00:00,  2.07it/s]
+
+======================================================================
+FRESH EVALUATION RESULTS
+======================================================================
+
+SEGMENTATION ACCURACY:
+  Background  :  96.82% (768,727 / 793,978)
+  Corona      :  93.98% (15,789 / 16,800)
+  Surface     :  14.85% (610 / 4,107)
+  Internal    :  18.93% (35,138 / 185,615)
+  OVERALL     :  81.99%
+
+DENOISING QUALITY:
+  SNR Improvement: 16.18 +/- 5.33 dB
+  NCC (Shape):     0.5145 +/- 0.3226
+  RMSE:            0.105286 +/- 0.058885
+======================================================================
+
+Results saved to: D:\New folder (2)\outputs\improved_training\final_eval_results.txt

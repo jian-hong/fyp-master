@@ -1,0 +1,72 @@
+Traceback (most recent call last):
+======================================================================
+Q.LIN PD-INDUCED AE SIGNAL DATASET ANALYSIS
+Verifying claims from Lin et al. (2022)
+======================================================================
+
+============================================================
+Analyzing: 1.0mm (data1.0mm.mat)
+============================================================
+Keys in file: ['data10mm']
+
+--- Variable: 'data10mm' ---
+  Shape: (200, 1000000)
+  Data type: float64
+  Total samples: 200000000
+  Min value: -5.000000
+  Max value: 4.997600
+  Mean value: -0.037710
+  Std deviation: 0.022527
+
+============================================================
+Analyzing: 1.8mm (data1.8mm.mat)
+============================================================
+Keys in file: ['data18mm']
+
+--- Variable: 'data18mm' ---
+  Shape: (200, 1000000)
+  Data type: float64
+  Total samples: 200000000
+  Min value: -5.000000
+  Max value: 4.997600
+  Mean value: -0.037321
+  Std deviation: 0.101702
+
+  File "D:\New folder (2)\Data\OneDrive_2025-12-13\Datset from Q.lin\analyze_dataset.py", line 207, in <module>
+============================================================
+Analyzing: 2.0mm (data2.0mm.mat)
+============================================================
+Keys in file: ['data20mm']
+
+--- Variable: 'data20mm' ---
+  Shape: (200, 1000000)
+  Data type: float64
+  Total samples: 200000000
+  Min value: -4.660600
+  Max value: 4.997600
+  Mean value: -0.037847
+  Std deviation: 0.102511
+
+============================================================
+Analyzing: 2.5mm (data2.5mm.mat)
+============================================================
+Keys in file: ['data25mm']
+
+--- Variable: 'data25mm' ---
+  Shape: (200, 1000000)
+  Data type: float64
+  Total samples: 200000000
+  Min value: -4.824200
+  Max value: 4.997600
+  Mean value: -0.037808
+  Std deviation: 0.112736
+
+======================================================================
+SUMMARY: VERIFICATION OF PAPER CLAIMS
+======================================================================
+    main()
+  File "D:\New folder (2)\Data\OneDrive_2025-12-13\Datset from Q.lin\analyze_dataset.py", line 105, in main
+    print("\n\U0001f4ca CLAIMED vs ACTUAL DATA:")
+  File "C:\Users\user\AppData\Local\Programs\Python\Python310\lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f4ca' in position 2: character maps to <undefined>

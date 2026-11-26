@@ -1,0 +1,97 @@
+MWCNN ENCODER FORWARD PASS AUDIT
+=================================
+Source: Try Model/mr_tae_fusion/models/mwcnn.py
+       Try Model/mr_tae_fusion/models/wavelet_layers.py
+Run:    python -c "MRTAEFusion(Config().model).eval(); x=torch.randn(1,1,2048)"
+        (.venv activated, PYTHONPATH=Try Model)
+Date:   2026-05-27
+
+-----------------------------------------------------------------------------
+Q1. ORDER AT EACH ENCODER LEVEL: Conv block FIRST, then DWT
+-----------------------------------------------------------------------------
+
+Per-level block is MWCNNBlock. Docstring states: "Conv -> Conv -> DWT downsampling"
+
+Exact forward order in MWCNNBlock.forward():
+
+  features = self.conv1(x)          # line 105
+  features = self.conv2(features)   # line 106
+  skip = features                   # line 109  (pre-DWT)
+  down = self.dwt(features)         # line 112
+
+Answer: (b) Conv block comes FIRST; (a) DWT / wavelet downsampling comes SECOND.
+
+NOT DWT-first. Any diagram showing DWT before conv at each level is wrong.
+
+-----------------------------------------------------------------------------
+Q2. INPUT / OUTPUT TENSOR SHAPES AT EACH ENCODER LEVEL
+-----------------------------------------------------------------------------
+
+Note: Input to encoder is AFTER input_proj in MRTAEFusion:
+  raw x (1,1,2048) -> input_proj Conv1d(1->32, k=7) -> encoder in (1,32,2048)
+
+Printed shapes from MWCNNEncoder.forward() (temporary prints, then removed):
+
+  Level 0 input:  torch.Size([1, 32, 2048])
+  Level 0 output: torch.Size([1, 64, 1025])   skip: torch.Size([1, 32, 2048])
+
+  Level 1 input:  torch.Size([1, 64, 1025])
+  Level 1 output: torch.Size([1, 128, 513])   skip: torch.Size([1, 64, 1025])
+
+  Level 2 input:  torch.Size([1, 128, 513])
+  Level 2 output: torch.Size([1, 256, 257])   skip: torch.Size([1, 128, 513])
+
+Summary table (B=1, L=2048 input to encoder):
+
+  Level | C_in | L_in  | C_out (after DWT) | L_out | Skip C | Skip L
+  ------|------|-------|-------------------|-------|--------|--------
+    0   |  32  | 2048  |        64         | 1025  |   32   | 2048
+    1   |  64  | 1025  |       128         |  513  |   64   | 1025
+    2   | 128  |  513  |       256         |  257  |  128   |  513
+
+Length after DWT is ~L//2 + 1 (not exact L//2) due to reflect padding and
+stride-2 subsampling in DWT1d (see wavelet_layers.py lines 166-174).
+
+Encoder final output -> pre_bottleneck Conv1d(256->256) -> bottleneck.
+
+-----------------------------------------------------------------------------
+Q3. SKIP CONNECTION CAPTURE POINT
+-----------------------------------------------------------------------------
+
+Skip is saved AFTER both conv blocks, BEFORE DWT.
+
+Exact lines (mwcnn.py MWCNNBlock.forward):
+
+  features = self.conv1(x)
+  features = self.conv2(features)
+  skip = features                    # <-- captured here (post-Conv, pre-DWT)
+  down = self.dwt(features)
+
+Answer: After Conv (both conv1 and conv2), BEFORE DWT.
+
+Skip tensor shape = (B, C_out, L) — same length as pre-DWT features, half the
+channel count of the DWT output at that level.
+
+MWCNNEncoder appends skip in forward() line 181:
+  skip_features.append(skip)
+
+-----------------------------------------------------------------------------
+Q4. WAVELET TYPE AND DWT IMPLEMENTATION
+-----------------------------------------------------------------------------
+
+Wavelet: Daubechies-4 ('db4')
+
+  - MWCNNBlock default: wavelet='db4' (mwcnn.py line 80)
+  - MWCNNEncoder default: wavelet='db4' (mwcnn.py line 136)
+  - MRTAEFusion hardcodes: wavelet="db4" (mr_tae_fusion.py line 175)
+  - WAVELET_FILTERS dict in wavelet_layers.py includes haar, db2, db4, db6
+
+Implementation: Custom PyTorch layer (GPU-compatible). NOT pywt.
+
+  - DWT1d uses F.conv1d with frozen filter buffers (wavelet_layers.py 110-179)
+  - No import of pywt anywhere in wavelet_layers.py
+  - numpy used only once at init to load static filter coefficients
+
+LATENCY FLAG: No — pywt is NOT used. DWT runs on GPU with grouped conv1d.
+
+Available wavelets in code: haar, db2, db4 (default), db6.

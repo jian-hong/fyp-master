@@ -1,0 +1,93 @@
+{
+  "model_id": "MR-TAE-noSwin-noAttn",
+  "checkpoint": "D:\\New folder (2)\\Data\\FYP_MASTER\\results\\MR-TAE-noSwin-noAttn\\checkpoints\\best.pt",
+  "ablation_source": "config/model_registry.yaml",
+  "hybrid_savgol_gamma_nn": null,
+  "synthetic": {
+    "ncc_mean": 0.5806665420532227,
+    "ncc_std": 0.3243604302406311,
+    "rmse_mean": 0.5359387397766113,
+    "rmse_std": 0.7746749520301819,
+    "snr_improvement_mean": 4.294017791748047,
+    "snr_improvement_std": 3.3258109092712402,
+    "dice_mean": 0.8941162824630737,
+    "dice_std": 0.07693931460380554,
+    "false_positive_rate": 0.3276354670524597,
+    "per_snr_ncc": {
+      "-15": {
+        "ncc_mean": 0.0982070341706276,
+        "ncc_std": 0.04992101714015007
+      },
+      "-10": {
+        "ncc_mean": 0.33793848752975464,
+        "ncc_std": 0.06430540233850479
+      },
+      "-5": {
+        "ncc_mean": 0.6523420214653015,
+        "ncc_std": 0.06695403903722763
+      },
+      "0": {
+        "ncc_mean": 0.8661468625068665,
+        "ncc_std": 0.03166435286402702
+      },
+      "5": {
+        "ncc_mean": 0.9486983418464661,
+        "ncc_std": 0.012951702810823917
+      }
+    }
+  },
+  "real_qlin": {
+    "ncc_mean": 0.5239267349243164,
+    "ncc_std": 0.24155890941619873,
+    "rmse_mean": 1.515438437461853,
+    "rmse_std": 1.4955854415893555,
+    "n_windows_evaluated": 20000,
+    "reference": "input_window",
+    "note": "No clean ground truth; NCC/RMSE vs observed window."
+  },
+  "real_qlin_grounded": {
+    "ncc_mean": 0.13226550817489624,
+    "ncc_std": 0.2497105598449707,
+    "rmse_mean": 11.675806999206543,
+    "rmse_std": 10.823439598083496,
+    "n_windows_evaluated": 10000,
+    "reference": "clean_ground_truth",
+    "per_snr": {
+      "-15": {
+        "ncc_mean": -0.06899727135896683,
+        "ncc_std": 0.18247650563716888,
+        "rmse_mean": 27.79608917236328,
+        "rmse_std": 9.004566192626953
+      },
+      "-10": {
+        "ncc_mean": -0.030790193006396294,
+        "ncc_std": 0.1931324303150177,
+        "rmse_mean": 16.76428985595703,
+        "rmse_std": 5.460193634033203
+      },
+      "-5": {
+        "ncc_mean": 0.09441416710615158,
+        "ncc_std": 0.12871018052101135,
+        "rmse_mean": 8.40051555633545,
+        "rmse_std": 3.2554056644439697
+      },
+      "0": {
+        "ncc_mean": 0.24424496293067932,
+        "ncc_std": 0.13901551067829132,
+        "rmse_mean": 3.5094926357269287,
+        "rmse_std": 1.9240038394927979
+      },
+      "5": {
+        "ncc_mean": 0.4224558174610138,
+        "ncc_std": 0.2000274360179901,
+        "rmse_mean": 1.908645510673523,
+        "rmse_std": 1.4032448530197144
+      }
+    }
+  },
+  "efficiency": {
+    "param_count_M": 1.3629,
+    "inference_latency_ms_b1": 14.255,
+    "inference_latency_ms_b32": 0.4526
+  }
+}

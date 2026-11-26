@@ -1,0 +1,33 @@
+{
+  "_meta": {
+    "device": "cuda",
+    "has_clean_gt": true,
+    "n_windows": 10000,
+    "note": "input-ref = similarity to noisy input; gt-ref = denoising quality (only if noisy Q.Lin exists)"
+  },
+  "results_idwt_nophase__MR-TAE-FULL-IDWT": {
+    "ncc_vs_noisy_input": 0.2326,
+    "ncc_vs_clean_gt": -0.0002,
+    "has_clean_gt": true
+  },
+  "results_idwt_phased__MR-TAE-FULL-IDWT": {
+    "ncc_vs_noisy_input": 0.324,
+    "ncc_vs_clean_gt": 0.0003,
+    "has_clean_gt": true
+  },
+  "results_full_lossb_idwt_phased__MR-TAE-FULL-LossB-IDWT": {
+    "ncc_vs_noisy_input": 0.4983,
+    "ncc_vs_clean_gt": 0.0011,
+    "has_clean_gt": true
+  },
+  "results_full_linear_phased__MR-TAE-FULL": {
+    "ncc_vs_noisy_input": 0.4903,
+    "ncc_vs_clean_gt": 0.0004,
+    "has_clean_gt": true
+  },
+  "results_full_lossb_linear_phased__MR-TAE-FULL-LossB": {
+    "ncc_vs_noisy_input": 0.6094,
+    "ncc_vs_clean_gt": -0.0,
+    "has_clean_gt": true
+  }
+}

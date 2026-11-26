@@ -1,0 +1,64 @@
+{
+  "model_id": "MR-TAE-FULL",
+  "results_root": "results",
+  "selection_criterion": "max mean NCC across SNR levels; tie-break -15 dB",
+  "candidates": [
+    {
+      "checkpoint": "checkpoint_epoch0090.pt",
+      "path": "results\\MR-TAE-FULL\\checkpoints\\checkpoint_epoch0090.pt",
+      "epoch": 90,
+      "phase": null,
+      "per_snr_ncc": {
+        "-15": 0.3637653589248657,
+        "-10": 0.6568576693534851,
+        "-5": 0.8370043039321899,
+        "0": 0.9125945568084717,
+        "5": 0.9416517615318298,
+        "10": 0.9486629962921143,
+        "15": 0.9516661167144775
+      },
+      "synthetic_ncc_mean": 0.8017,
+      "synthetic_ncc_minus15db": 0.3638
+    },
+    {
+      "checkpoint": "checkpoint_epoch0100.pt",
+      "path": "results\\MR-TAE-FULL\\checkpoints\\checkpoint_epoch0100.pt",
+      "epoch": 100,
+      "phase": null,
+      "per_snr_ncc": {
+        "-15": 0.3685287833213806,
+        "-10": 0.6600667834281921,
+        "-5": 0.8388480544090271,
+        "0": 0.9114801287651062,
+        "5": 0.9344526529312134,
+        "10": 0.9435545206069946,
+        "15": 0.9477695226669312
+      },
+      "synthetic_ncc_mean": 0.8007,
+      "synthetic_ncc_minus15db": 0.3685
+    },
+    {
+      "checkpoint": "checkpoint_epoch0110.pt",
+      "path": "results\\MR-TAE-FULL\\checkpoints\\checkpoint_epoch0110.pt",
+      "epoch": 110,
+      "phase": null,
+      "per_snr_ncc": {
+        "-15": 0.3675172030925751,
+        "-10": 0.6604726910591125,
+        "-5": 0.839087724685669,
+        "0": 0.91141676902771,
+        "5": 0.936560869216919,
+        "10": 0.9440388679504395,
+        "15": 0.9479072093963623
+      },
+      "synthetic_ncc_mean": 0.801,
+      "synthetic_ncc_minus15db": 0.3675
+    }
+  ],
+  "selected_checkpoint": "checkpoint_epoch0090.pt",
+  "selected_path": "results\\MR-TAE-FULL\\checkpoints\\checkpoint_epoch0090.pt",
+  "selected_epoch": 90,
+  "selected_phase": null,
+  "selected_synthetic_ncc_mean": 0.8017,
+  "selected_synthetic_ncc_minus15db": 0.3638
+}

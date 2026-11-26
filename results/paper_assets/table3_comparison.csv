@@ -1,0 +1,5 @@
+Method,Syn.\ NCC,Real NCC,Params (M),Lat.\ (ms),Notes
+MR-TAE-FULL-LossB,0.6110,0.8674,3.010,9.50,Proposed
+CleanUNet-1D,---,---,---,---,External benchmark (populate after eval)
+DnCNN-1D,---,---,---,---,External benchmark (populate after eval)
+Wiener (scipy),0.4073,---,0,~0.5,Subset mean NCC vs clean synthetic windows (Wiener scipy)

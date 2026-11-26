@@ -1,0 +1,2 @@
+IN_PROGRESS: MR-TAE-FULL-IDWT training (pipeline/mlflow_orchestrator.py --model MR-TAE-FULL-IDWT --hparams config/hparams_mr_tae_full_idwt.yaml)
+PENDING: Auto comparison via scripts/wait_and_compare_idwt.py -> evaluation/compare_idwt_vs_linear.py

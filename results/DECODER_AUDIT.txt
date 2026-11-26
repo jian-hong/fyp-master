@@ -1,0 +1,132 @@
+DECODER & SKIP CONNECTION AUDIT
+===============================
+Source: Try Model/mr_tae_fusion/models/mwcnn.py (decoder)
+       Try Model/mr_tae_fusion/models/mr_tae_fusion.py
+       Try Model/mr_tae_fusion/models/attention.py
+       Try Model/mr_tae_fusion/models/fusion_head.py
+Run:    MRTAEFusion(Config().model), x=torch.randn(1,1,2048)
+Date:   2026-05-27
+
+-----------------------------------------------------------------------------
+Q1. WHERE EACH SKIP IS MERGED IN DECODER
+-----------------------------------------------------------------------------
+
+Decoder block: MWCNNDecoderBlock.forward() order:
+
+  1. Upsample (NOT IDWT by default — use_idwt=False)
+  2. Align lengths with skip if needed
+  3. torch.cat([up, skip], dim=1)     # MERGE HERE — after upsample, before conv
+  4. conv1(combined)
+  5. conv2(out)
+
+Exact lines (mwcnn.py):
+
+  up = self.upsample(x)  OR self.idwt(x)   # lines 297-302
+  ...
+  combined = torch.cat([up, skip], dim=1)   # line 310 — skip merge
+  out = self.conv1(combined)                # lines 313-314
+  out = self.conv2(out)
+
+Answer: Skip merged AFTER upsampling (linear Upsample+Conv path), BEFORE conv
+blocks. NOT before upsample. NOT after conv.
+
+MRTAEFusion applies AttentionGate to skip BEFORE passing to decoder block
+(mr_tae_fusion.py lines 287-291), so flow is:
+  gate(skip, current) -> gated skip -> decoder block(up + cat + conv)
+
+IDWT: MWCNNDecoderBlock defaults use_idwt=False. Decoder uses interpolation
+upsampling, not inverse DWT, in the current build.
+
+-----------------------------------------------------------------------------
+Q2. SKIP vs DECODER TENSOR DIMENSION MATCHING (runtime check)
+-----------------------------------------------------------------------------
+
+Printed from forward pass (x shape 1,1,2048):
+
+Decoder level 0 (deepest, processes level-2 skip):
+  current/bottleneck in: (1, 256, 257)
+  skip (encoder L2):     (1, 128, 513)
+  after attention gate:  (1, 128, 513)
+  after upsample:        (1, 128, 513)   MATCHES skip length 513
+  merge cat:             (1, 256, 513)
+  block out:             (1, 128, 513)
+
+Decoder level 1:
+  current in:            (1, 128, 513)
+  skip (encoder L1):     (1, 64, 1025)
+  after upsample:        (1, 64, 1025)   MATCHES skip length 1025
+  merge cat:             (1, 128, 1025)
+  block out:             (1, 64, 1025)
+
+Decoder level 2 (shallowest):
+  current in:            (1, 64, 1025)
+  skip (encoder L0):     (1, 32, 2048)
+  after upsample:        (1, 32, 2048)   MATCHES skip length 2048
+  merge cat:             (1, 64, 2048)
+  block out:             (1, 32, 2048)
+
+Answer: YES — spatial lengths match at merge point (upsample targets
+output_length from skip_lengths). Channel dims: merge is concat(up_ch + skip_ch).
+
+-----------------------------------------------------------------------------
+Q3. ATTENTION GATE IMPLEMENTATION
+-----------------------------------------------------------------------------
+
+Type: (a) Proper attention gate — sigmoid(psi(ReLU(W_g*g + W_x*x))) * x
+
+attention.py AttentionGate.forward():
+
+  g_proj = self.W_gate(gate)           # W_g
+  x_proj = self.W_skip(skip)           # W_x
+  attention = self.relu(g_proj + x_proj)
+  attention = self.bn(attention)
+  alpha = self.sigmoid(self.psi(attention))
+  gated = skip * alpha
+
+GatedSkipConnection adds weighted residual:
+  output = gated + self.residual_weight * skip
+
+NOT plain concat+conv on skip alone. NOT plain addition of skip and gate.
+
+-----------------------------------------------------------------------------
+Q4. DECODER CHANNEL SEQUENCE (deepest -> shallow)
+-----------------------------------------------------------------------------
+
+Config decoder_channels: [128, 64, 32]  (level 3 -> 2 -> 1 in diagram terms)
+
+Processing order in MRTAEFusion (i=0 deepest first):
+
+  Level i=0:  in 256 ch -> out 128 ch  (skip 128 ch)
+  Level i=1:  in 128 ch -> out  64 ch  (skip  64 ch)
+  Level i=2:  in  64 ch -> out  32 ch  (skip  32 ch)
+
+Channel sequence deep-to-shallow: 256 -> 128 -> 64 -> 32
+
+skip_channels config (reversed encoder): [128, 64, 32]
+
+-----------------------------------------------------------------------------
+Q5. OUTPUT HEAD ARCHITECTURES
+-----------------------------------------------------------------------------
+
+SIGNAL (denoising) HEAD — ReconstructionHead (fusion_head.py):
+
+  Layers:
+    Conv1d(in, in//2, k=3) + BatchNorm + GELU
+    Conv1d(in//2, out_channels=1, k=1)
+  Optional: F.interpolate to target_length
+
+  Activation on OUTPUT: NONE (linear). No tanh, no sigmoid.
+  CRITICAL CHECK: CORRECT for bipolar AE signals.
+
+SEGMENTATION HEAD — DualStreamFusionHead (when use_mtl=True):
+
+  num_classes: 5 (ModelConfig; Config syncs from SignalConfig)
+  Streams: global (bottleneck 256ch) + local (decoder 32ch)
+  Fusion: concat -> 2x Conv3x3 with BN+GELU -> classifier Conv1d
+  Output: logits (B, 5, L) — no softmax in forward (loss applies softmax)
+
+  Final activation: none in forward (raw logits for cross-entropy).
+
+Final model outputs (run):
+  denoised: (1, 1, 2048)
+  seg:      (1, 5, 2048)

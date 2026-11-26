@@ -1,0 +1,51 @@
+{
+  "model_id": "Baseline-Savitzky-Golay",
+  "checkpoint": null,
+  "synthetic": {
+    "ncc_mean": 0.02577931433916092,
+    "ncc_std": 0.11419106274843216,
+    "rmse_mean": 0.3494936525821686,
+    "rmse_std": 0.14265862107276917,
+    "snr_improvement_mean": 2.4932448863983154,
+    "snr_improvement_std": 4.4775896072387695,
+    "dice_mean": null,
+    "dice_std": null,
+    "false_positive_rate": null,
+    "per_snr_ncc": {
+      "-15": {
+        "ncc_mean": 0.01054581068456173,
+        "ncc_std": 0.04087122902274132
+      },
+      "-10": {
+        "ncc_mean": 0.016189007088541985,
+        "ncc_std": 0.06174212694168091
+      },
+      "-5": {
+        "ncc_mean": 0.028605228289961815,
+        "ncc_std": 0.096285879611969
+      },
+      "0": {
+        "ncc_mean": 0.029432864859700203,
+        "ncc_std": 0.1346731334924698
+      },
+      "5": {
+        "ncc_mean": 0.04412367194890976,
+        "ncc_std": 0.17783628404140472
+      }
+    },
+    "segmentation_note": "Classical denoiser \u2014 no segmentation head; Dice/FPR omitted."
+  },
+  "real_qlin": {
+    "ncc_mean": 0.7039185762405396,
+    "ncc_std": 0.23076088726520538,
+    "rmse_mean": 0.6476760506629944,
+    "rmse_std": 0.18125879764556885,
+    "reference": "input_window",
+    "note": "No clean ground truth; NCC/RMSE vs observed window."
+  },
+  "efficiency": {
+    "param_count_M": 0.0,
+    "inference_latency_ms_b1": 0.8044,
+    "inference_latency_ms_b32": 0.0
+  }
+}

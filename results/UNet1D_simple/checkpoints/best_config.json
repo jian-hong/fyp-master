@@ -1,0 +1,12 @@
+{
+  "model_type": "UNet1D_simple",
+  "use_idwt": false,
+  "epochs": 50,
+  "batch_size": 64,
+  "lr": 0.001,
+  "loss": "MSE",
+  "n_train": 50000,
+  "n_val": 5000,
+  "seed": 42,
+  "training_data": "PDSignalDataset (same split as MR-TAE, flat composite SNR -20..15 dB)"
+}

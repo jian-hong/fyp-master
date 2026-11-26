@@ -1,0 +1,67 @@
+============================================================
+MR-TAE-Fusion Evaluation and Comparison
+============================================================
+Device: cuda
+
+Loading trained models...
+Loaded baseline_best.pth
+  Best Epoch: 49
+  SNR Improvement: 3.64 dB
+  NCC: 0.9249
+Loaded sota_best.pth
+  Best Epoch: 49
+  SNR Improvement: 7.72 dB
+  NCC: 0.9422
+
+Evaluating Baseline...
+
+Evaluating:   0%|          | 0/16 [00:00<?, ?it/s]D:\New folder (2)\examples\evaluate_results.py:66: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast():
+
+Evaluating:   6%|6         | 1/16 [00:00<00:10,  1.47it/s]
+Evaluating:  19%|#8        | 3/16 [00:00<00:02,  4.66it/s]
+Evaluating:  38%|###7      | 6/16 [00:00<00:01,  8.82it/s]
+Evaluating:  56%|#####6    | 9/16 [00:01<00:00, 11.97it/s]
+Evaluating:  69%|######8   | 11/16 [00:01<00:00, 13.62it/s]
+Evaluating:  81%|########1 | 13/16 [00:01<00:00, 14.86it/s]
+Evaluating:  94%|#########3| 15/16 [00:01<00:00, 15.67it/s]
+Evaluating: 100%|##########| 16/16 [00:01<00:00,  8.85it/s]
+
+Evaluating SOTA...
+
+Evaluating:   0%|          | 0/16 [00:00<?, ?it/s]
+Evaluating:  19%|#8        | 3/16 [00:00<00:00, 21.01it/s]
+Evaluating:  38%|###7      | 6/16 [00:00<00:00, 21.09it/s]
+Evaluating:  56%|#####6    | 9/16 [00:00<00:00, 20.85it/s]
+Evaluating:  75%|#######5  | 12/16 [00:00<00:00, 20.97it/s]
+Evaluating:  94%|#########3| 15/16 [00:00<00:00, 21.10it/s]
+Evaluating: 100%|##########| 16/16 [00:00<00:00, 21.56it/s]
+Traceback (most recent call last):
+  File "D:\New folder (2)\examples\evaluate_results.py", line 251, in <module>
+
+======================================================================
+                      PERFORMANCE COMPARISON
+======================================================================
+Metric                    | Baseline (MSE)       | SOTA (Charbonnier)  
+----------------------------------------------------------------------
+SNR Improvement (dB)      | 12.02 ▒ 2.13 | 14.03 ▒ 3.67
+NCC (Shape Fidelity)      | 0.3871 ▒ 0.2872 | 0.3355 ▒ 0.3367
+RMSE                      | 0.160727 ▒ 0.098917 | 0.133322 ▒ 0.094915
+----------------------------------------------------------------------
+
+SNR Improvement by Input SNR Level:
+Input SNR       | Baseline        | SOTA            | Improvement    
+------------------------------------------------------------
+        -5 dB   |      10.99 dB |      12.23 dB |      +1.25 dB
+       -10 dB   |      12.01 dB |      12.97 dB |      +0.97 dB
+       -15 dB   |      12.32 dB |      14.72 dB |      +2.40 dB
+       -20 dB   |      12.40 dB |      15.82 dB |      +3.42 dB
+======================================================================
+    main()
+  File "D:\New folder (2)\examples\evaluate_results.py", line 238, in main
+    create_summary_table(results_baseline, results_sota)
+  File "D:\New folder (2)\examples\evaluate_results.py", line 201, in create_summary_table
+    print(f"\n\U0001f3af OVERALL IMPROVEMENT: SOTA is {improvement:+.2f} dB better than Baseline!")
+  File "C:\Users\user\AppData\Local\Programs\Python\Python310\lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f3af' in position 2: character maps to <undefined>

@@ -1,0 +1,20 @@
+{
+  "MR-TAE-FULL": {
+    "ncc_mean": 0.1267,
+    "ncc_std": 0.039,
+    "ncc_p10": 0.0752,
+    "ncc_p90": 0.1745
+  },
+  "MR-TAE-noBiGRU-noAttn": {
+    "ncc_mean": 0.1382,
+    "ncc_std": 0.0517,
+    "ncc_p10": 0.0657,
+    "ncc_p90": 0.196
+  },
+  "MR-TAE-FULL-LossB": {
+    "ncc_mean": 0.1469,
+    "ncc_std": 0.0415,
+    "ncc_p10": 0.0948,
+    "ncc_p90": 0.1973
+  }
+}

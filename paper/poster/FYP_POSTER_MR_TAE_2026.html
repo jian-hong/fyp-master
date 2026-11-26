@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MR-TAE FYP Poster — UM iFEST 2026</title>
+<style>
+  @page { size: A0 portrait; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Segoe UI", Calibri, Arial, sans-serif;
+    background: #f0f4f8;
+    color: #1e293b;
+    line-height: 1.35;
+  }
+  .poster {
+    width: 841mm;
+    min-height: 1189mm;
+    margin: 0 auto;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+  }
+  header {
+    background: linear-gradient(135deg, #003087 0%, #001f54 100%);
+    color: #fff;
+    padding: 18mm 20mm 14mm;
+    border-bottom: 5px solid #CBA135;
+  }
+  header .fest { color: #CBA135; font-size: 14pt; font-weight: 600; letter-spacing: 2px; }
+  header h1 { font-size: 28pt; font-weight: 700; margin: 6mm 0 4mm; line-height: 1.15; }
+  header .meta { font-size: 11pt; opacity: 0.95; }
+  header .meta strong { color: #CBA135; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 5mm;
+    padding: 8mm 10mm 10mm;
+    flex: 1;
+  }
+  .col { display: flex; flex-direction: column; gap: 5mm; }
+  section {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    padding: 4mm;
+    break-inside: avoid;
+  }
+  section h2 {
+    font-size: 11pt;
+    color: #003087;
+    border-bottom: 2px solid #CBA135;
+    padding-bottom: 2mm;
+    margin-bottom: 3mm;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  section h3 { font-size: 9.5pt; color: #003087; margin: 2mm 0 1.5mm; }
+  p, li { font-size: 8.5pt; margin-bottom: 2mm; }
+  ul { padding-left: 4mm; }
+  table { width: 100%; border-collapse: collapse; font-size: 7.5pt; margin: 2mm 0; }
+  th { background: #003087; color: #fff; padding: 1.5mm 2mm; text-align: left; }
+  td { padding: 1.5mm 2mm; border-bottom: 1px solid #e2e8f0; }
+  tr:nth-child(even) td { background: #f1f5f9; }
+  tr.highlight td { background: #dbeafe; font-weight: 600; }
+  .fig { text-align: center; margin: 2mm 0; }
+  .fig img { max-width: 100%; height: auto; border: 1px solid #cbd5e1; border-radius: 2px; }
+  .figcap { font-size: 7pt; color: #64748b; font-style: italic; margin-top: 1mm; }
+  pre.code {
+    font-size: 6.5pt;
+    background: #1e293b;
+    color: #e2e8f0;
+    padding: 2.5mm;
+    border-radius: 3px;
+    overflow-x: auto;
+    line-height: 1.3;
+  }
+  .callout {
+    background: #003087;
+    color: #fff;
+    padding: 3mm;
+    border-radius: 3px;
+    font-size: 8.5pt;
+    border-left: 4px solid #CBA135;
+  }
+  .callout strong { color: #CBA135; }
+  .badge {
+    display: inline-block;
+    background: #CBA135;
+    color: #003087;
+    font-weight: 700;
+    font-size: 8pt;
+    padding: 1mm 3mm;
+    border-radius: 2px;
+    margin-bottom: 2mm;
+  }
+  .conclusion li { list-style: none; padding-left: 0; }
+  .conclusion li::before { content: "✓ "; color: #15803d; font-weight: bold; }
+  footer {
+    background: #003087;
+    color: #fff;
+    text-align: center;
+    padding: 4mm;
+    font-size: 7.5pt;
+  }
+  @media print {
+    body { background: #fff; }
+    .poster { width: 100%; }
+  }
+</style>
+</head>
+<body>
+<div class="poster">
+
+<header>
+  <div class="fest">UM iFEST 2026</div>
+  <h1>Intelligent Partial Discharge Denoising using a Multi-Level Wavelet Recurrent-Transformer Autoencoder (MR-TAE)</h1>
+  <div class="meta">
+    <strong>Oo Jian Hong</strong> (22004678) &nbsp;·&nbsp;
+    Supervisor: <strong>Ir. Dr. Wong Jee Keen Raymond</strong><br>
+    Department of Electrical Engineering, Faculty of Engineering, Universiti Malaya, Kuala Lumpur, Malaysia
+    &nbsp;·&nbsp; wjkraymond@um.edu.my
+  </div>
+</header>
+
+<div class="grid">
+
+<!-- COLUMN 1 -->
+<div class="col">
+  <section>
+    <h2>Introduction &amp; Problem</h2>
+    <p>Partial discharge (PD) is the earliest detectable sign of insulation breakdown in high-voltage (HV) transformers. On-site acoustic-emission (AE) sensors capture diagnostic pulses but are overwhelmed by broadband noise at SNR as low as <strong>−15 dB</strong>.</p>
+    <p>Classical denoisers (wavelet thresholding, Wiener filter, Savitzky-Golay) share three fatal limitations:</p>
+    <ul>
+      <li>Require manual tuning per noise type</li>
+      <li>Cannot separate impulsive interference from real PD pulses</li>
+      <li>Destroy morphological signatures needed for fault classification</li>
+    </ul>
+    <div class="callout"><strong>Clinical significance:</strong> A method that suppresses noise by blurring the signal destroys the very features that distinguish corona from internal discharge.</div>
+  </section>
+  <section>
+    <div class="fig">
+      <img src="../figures/fig1_system_overview.png" alt="System pipeline">
+      <div class="figcap">Fig. 1 — End-to-end PD monitoring pipeline.</div>
+    </div>
+  </section>
+  <section>
+    <h3>5-Component Composite Noise Model</h3>
+    <table>
+      <tr><th>Component</th><th>Source</th></tr>
+      <tr><td>AWGN</td><td>Thermal / electronic</td></tr>
+      <tr><td>Broadband structural</td><td>Magnetostrictive core hum</td></tr>
+      <tr><td>Powerline harmonics</td><td>50 Hz + 3rd harmonic</td></tr>
+      <tr><td>Narrowband 80 kHz</td><td>Comms / fan resonance</td></tr>
+      <tr><td>Bernoulli-Gaussian</td><td>Switching transients</td></tr>
+    </table>
+    <p>Target SNR: −15 to +15 dB in 5 dB steps · <strong>14,000</strong> frozen test windows</p>
+  </section>
+</div>
+
+<!-- COLUMN 2 -->
+<div class="col">
+  <section>
+    <h2>Architecture</h2>
+    <p>Single unified multi-task autoencoder — denoising + discharge-type segmentation in one inference pass.</p>
+    <div class="fig">
+      <img src="../figures/fig2_architecture.png" alt="MR-TAE architecture">
+      <div class="figcap">Fig. 2 — MR-TAE: Conv-first MWCNN encoder, BiGRU→Swin bottleneck, AG-gated decoder.</div>
+    </div>
+  </section>
+  <section>
+    <h3>Encoder — MWCNN (Conv-first, DWT doubles channels)</h3>
+    <pre class="code">Input (B,1,2048)
+→ Input Proj Conv7 1→32ch       (B,32,2048)
+→ Conv L1 + skip₁ (B,32,2048) → DWT → (B,64,1025)
+→ Conv L2 + skip₂ (B,64,1025) → DWT → (B,128,513)
+→ Conv L3 + skip₃ (B,128,513) → DWT → (B,256,257)</pre>
+    <p>db4-DWT stacks approx + detail sub-bands → <strong>channels ×2, length ÷2</strong>.</p>
+  </section>
+  <section>
+    <h3>Bottleneck &amp; Attention Gate</h3>
+    <p><strong>BiGRU</strong> (2-layer, 128/dir) → <strong>Swin-1D</strong> (256 embed, 8 heads, window=32) → residual add.</p>
+    <p>AG: <em>Out = σ(ψ(ReLU(Wg·g + Wx·x))) × x</em> — filters noisy skips before concat. noAttn ablation: gNCC collapses 0.4366 → <strong>0.1014</strong>.</p>
+    <p><strong>Dual heads:</strong> Signal (32→16→1) + Segmentation (5-class: BG · Corona · Surface · Internal · Treeing)</p>
+  </section>
+</div>
+
+<!-- COLUMN 3 -->
+<div class="col">
+  <section>
+    <h2>Methodology &amp; Training</h2>
+    <table>
+      <tr><th>Split</th><th>Content</th><th>Size</th></tr>
+      <tr><td>Synthetic train</td><td>6 DOP archetypes (A–F)</td><td>80k</td></tr>
+      <tr><td>Synthetic test</td><td>7 SNR × 2000 windows</td><td>14,000</td></tr>
+      <tr><td>Real Q.Lin test</td><td>4 gaps, 7 SNR levels</td><td>35,000</td></tr>
+    </table>
+    <span class="badge">NoMix — Best Config</span>
+    <table>
+      <tr><th>Phase</th><th>Noise</th><th>SNR</th><th>Epochs</th></tr>
+      <tr><td>1</td><td>Gaussian</td><td>+5 to +15 dB</td><td>20</td></tr>
+      <tr><td>2</td><td>+Impulsive</td><td>−5 to +5 dB</td><td>30</td></tr>
+      <tr><td>3</td><td>Full composite</td><td>−20 to −5 dB</td><td>50</td></tr>
+    </table>
+    <p><strong>NoMix</strong> = phased curriculum without mixed-type augmentation — purer discharge-type signatures.</p>
+    <div class="fig">
+      <img src="../figures/fig09_curriculum.png" alt="Curriculum">
+      <div class="figcap">Fig. 3 — Three-phase curriculum training.</div>
+    </div>
+  </section>
+  <section>
+    <h3>Loss Configuration A</h3>
+    <p><em>L = w₁·L_Charb + w₂·L_Focal + w₃·L_GenDice</em> with learned homoscedastic weighting (Kendall 2018).</p>
+    <p>AdamW (lr=3×10⁻⁴), cosine annealing, grad clip=1.0, AMP.</p>
+  </section>
+</div>
+
+<!-- COLUMN 4 -->
+<div class="col">
+  <section>
+    <h2>Results</h2>
+    <span class="badge">Best Model: MR-TAE NoMix</span>
+    <table>
+      <tr><th>Metric</th><th>NoMix</th><th>BayesShrink</th><th>Δ</th></tr>
+      <tr class="highlight"><td>NCC (mean)</td><td>0.8282</td><td>0.6578</td><td>+25.9%</td></tr>
+      <tr class="highlight"><td>NCC @ −15 dB</td><td>0.3777</td><td>0.1575</td><td>2.39×</td></tr>
+      <tr><td>SNR improvement</td><td>9.64 dB</td><td>2.73 dB</td><td>+6.91 dB</td></tr>
+      <tr><td>Dice (5-class)</td><td>0.9192</td><td>N/A</td><td>—</td></tr>
+      <tr class="highlight"><td>gNCC (real)</td><td>0.4535</td><td>0.3844</td><td><strong>+17.9%</strong></td></tr>
+    </table>
+    <div class="fig">
+      <img src="../figures/fig_gncc_comparison.png" alt="gNCC comparison">
+      <div class="figcap">Fig. 4 — Real-domain gNCC (no fine-tuning).</div>
+    </div>
+  </section>
+  <section>
+    <div class="fig">
+      <img src="../figures/fig02_snr_bar.png" alt="Per-SNR NCC">
+      <div class="figcap">Fig. 5 — Per-SNR NCC vs baselines.</div>
+    </div>
+  </section>
+  <section>
+    <div class="fig">
+      <img src="../figures/fig03_snr_sweep.png" alt="SNR sweep">
+      <div class="figcap">Fig. 6 — NCC vs input SNR sweep.</div>
+    </div>
+  </section>
+</div>
+
+<!-- COLUMN 5 -->
+<div class="col">
+  <section>
+    <h2>Ablation &amp; Qualitative</h2>
+    <table>
+      <tr><th>Removed</th><th>NCC drop</th><th>Insight</th></tr>
+      <tr><td>Wavelet</td><td>−0.169</td><td>Lossless freq. decomposition</td></tr>
+      <tr><td>MTL seg</td><td>−0.151</td><td>Morphology preservation</td></tr>
+      <tr><td>BiGRU</td><td>−0.143</td><td>Temporal dynamics</td></tr>
+      <tr><td>Swin</td><td>−0.136</td><td>Long-range context</td></tr>
+      <tr><td>Attn gate</td><td>−0.122</td><td>Skip noise suppression</td></tr>
+    </table>
+    <div class="fig">
+      <img src="../figures/fig04_ablation_heatmap.png" alt="Ablation heatmap">
+      <div class="figcap">Fig. 7 — Ablation NCC heatmap.</div>
+    </div>
+  </section>
+  <section>
+    <div class="fig">
+      <img src="../figures/fig10_qualitative_waveforms.png" alt="Waveforms">
+      <div class="figcap">Fig. 8 — Waveform recovery at −15 dB.</div>
+    </div>
+  </section>
+  <section>
+    <h2>Explainability &amp; Efficiency</h2>
+    <div class="fig">
+      <img src="../figures/fig11_ablation_grid.png" alt="LIME">
+      <div class="figcap">Fig. 9 — LIME attributions at −15 dB.</div>
+    </div>
+    <div class="fig">
+      <img src="../figures/fig06_efficiency_scatter.png" alt="Efficiency">
+      <div class="figcap">Fig. 10 — Latency vs NCC (bubble = params).</div>
+    </div>
+  </section>
+  <section>
+    <h2>Conclusions</h2>
+    <ul class="conclusion">
+      <li>MR-TAE (NoMix): NCC <strong>0.8282</strong>, SNR <strong>9.64 dB</strong>, Dice <strong>0.9192</strong></li>
+      <li>Real gNCC <strong>0.4535</strong> — <strong>+17.9%</strong> over BayesShrink (0.3844), no FT</li>
+      <li>Wavelet + MTL segmentation are the two pillars of robustness</li>
+      <li>Joint denoising + segmentation in a single forward pass</li>
+      <li>IDWT decoder: 2.92M params vs 3.05M linear</li>
+    </ul>
+    <h3 style="margin-top:3mm">Future Work</h3>
+    <p>WGAN-GP augmentation · Noise2Void self-supervised adaptation · INT8 quantisation for edge deployment · Multi-sensor PD localisation</p>
+  </section>
+</div>
+
+</div><!-- grid -->
+
+<footer>
+  References: IEC 60270 · Q. Lin et al. 2022 · Donoho &amp; Johnstone 1994 · Zhang DnCNN 2017 · Liu MWCNN 2018 · Liu Swin 2021 · Kendall 2018 · Ribeiro LIME 2016 · Lundberg SHAP 2017
+  &nbsp;|&nbsp; Universiti Malaya · Faculty of Engineering · 2026
+</footer>
+
+</div>
+</body>
+</html>

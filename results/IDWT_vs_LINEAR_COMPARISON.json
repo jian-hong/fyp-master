@@ -1,0 +1,56 @@
+{
+  "MR-TAE-FULL": {
+    "snr_-15dB": {
+      "ncc_mean": 0.1119,
+      "ncc_std": 0.0688,
+      "ncc_p10": 0.0029
+    },
+    "snr_-10dB": {
+      "ncc_mean": 0.2672,
+      "ncc_std": 0.0985,
+      "ncc_p10": 0.1149
+    },
+    "snr_-5dB": {
+      "ncc_mean": 0.4344,
+      "ncc_std": 0.1137,
+      "ncc_p10": 0.2905
+    },
+    "snr_+0dB": {
+      "ncc_mean": 0.0,
+      "ncc_std": 0.0,
+      "ncc_p10": 0.0
+    },
+    "snr_+5dB": {
+      "ncc_mean": 0.81,
+      "ncc_std": 0.0349,
+      "ncc_p10": 0.7649
+    }
+  },
+  "MR-TAE-FULL-IDWT": {
+    "snr_-15dB": {
+      "ncc_mean": 0.3527,
+      "ncc_std": 0.1395,
+      "ncc_p10": 0.1878
+    },
+    "snr_-10dB": {
+      "ncc_mean": 0.6529,
+      "ncc_std": 0.0998,
+      "ncc_p10": 0.5262
+    },
+    "snr_-5dB": {
+      "ncc_mean": 0.8442,
+      "ncc_std": 0.0469,
+      "ncc_p10": 0.7821
+    },
+    "snr_+0dB": {
+      "ncc_mean": 0.0,
+      "ncc_std": 0.0,
+      "ncc_p10": 0.0
+    },
+    "snr_+5dB": {
+      "ncc_mean": 0.9418,
+      "ncc_std": 0.022,
+      "ncc_p10": 0.912
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "use_attention_gates": false,
+  "use_bigru": true,
+  "use_swin": true,
+  "use_wavelet_pooling": true,
+  "use_mtl": true,
+  "loss_config": "A",
+  "n_train": 50000,
+  "seed": 42,
+  "model_id": "MR-TAE-FULL"
+}

@@ -1,0 +1,7 @@
+PD type (gap),Label ID,Test windows
+1.0 mm,0,500
+1.8 mm,1,513
+2.0 mm,2,475
+2.5 mm,3,512
+sampling_rate_MHz,2
+window_length,2048

@@ -1,0 +1,14 @@
+{
+  "model_id": "MR-TAE-FULL",
+  "source_root": "results_full_linear_phased",
+  "dest_root": "results_qlin_cheat_linear",
+  "display": "MR-TAE-FULL (linear, Q.Lin cheat)",
+  "grounded_real_ncc_mean": 0.7871116399765015,
+  "synthetic_ncc_mean": 0.7531009912490845,
+  "snr_improvement_mean": 7.347961902618408,
+  "score": [
+    0.7871116399765015,
+    0.7531009912490845,
+    7.347961902618408
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "model_id": "Baseline-Savitzky-Golay",
+  "checkpoint": null,
+  "synthetic": {
+    "ncc_mean": 0.035064615309238434,
+    "ncc_std": 0.1651211529970169,
+    "rmse_mean": 0.3153906464576721,
+    "rmse_std": 0.13301481306552887,
+    "snr_improvement_mean": -1.6587692499160767,
+    "snr_improvement_std": 7.695223331451416,
+    "dice_mean": null,
+    "dice_std": null,
+    "false_positive_rate": null,
+    "per_snr_ncc": {
+      "-15": {
+        "ncc_mean": 0.009810908697545528,
+        "ncc_std": 0.037008125334978104
+      },
+      "-10": {
+        "ncc_mean": 0.01752799190580845,
+        "ncc_std": 0.0645068883895874
+      },
+      "-5": {
+        "ncc_mean": 0.025098206475377083,
+        "ncc_std": 0.09840001910924911
+      },
+      "0": {
+        "ncc_mean": 0.03408578410744667,
+        "ncc_std": 0.13779670000076294
+      },
+      "5": {
+        "ncc_mean": 0.04139367491006851,
+        "ncc_std": 0.1793268620967865
+      },
+      "10": {
+        "ncc_mean": 0.05023976415395737,
+        "ncc_std": 0.2291257679462433
+      },
+      "15": {
+        "ncc_mean": 0.06729596853256226,
+        "ncc_std": 0.2638980746269226
+      }
+    },
+    "segmentation_note": "Classical denoiser \u2014 no segmentation head; Dice/FPR omitted."
+  },
+  "real_qlin": {},
+  "efficiency": {
+    "param_count_M": 0.0,
+    "inference_latency_ms_b1": 0.7352,
+    "inference_latency_ms_b32": 0.0
+  },
+  "real_qlin_grounded": {
+    "ncc_mean": 0.5915244817733765,
+    "ncc_std": 0.25825443863868713,
+    "rmse_mean": 1.084919810295105,
+    "rmse_std": 0.6089886426925659,
+    "n_windows_evaluated": 35000,
+    "reference": "clean_ground_truth",
+    "per_snr": {
+      "-15": {
+        "ncc_mean": 0.32504570484161377,
+        "ncc_std": 0.16260044276714325,
+        "rmse_mean": 2.382187843322754,
+        "rmse_std": 0.11568184942007065
+      },
+      "-10": {
+        "ncc_mean": 0.47643643617630005,
+        "ncc_std": 0.2079278826713562,
+        "rmse_mean": 1.4483704566955566,
+        "rmse_std": 0.10138222575187683
+      },
+      "-5": {
+        "ncc_mean": 0.5954539179801941,
+        "ncc_std": 0.23617632687091827,
+        "rmse_mean": 0.9807130694389343,
+        "rmse_std": 0.1265219897031784
+      },
+      "0": {
+        "ncc_mean": 0.659794807434082,
+        "ncc_std": 0.24004195630550385,
+        "rmse_mean": 0.7724944353103638,
+        "rmse_std": 0.15447266399860382
+      },
+      "5": {
+        "ncc_mean": 0.6868796944618225,
+        "ncc_std": 0.23565195500850677,
+        "rmse_mean": 0.6920211315155029,
+        "rmse_std": 0.17024672031402588
+      },
+      "10": {
+        "ncc_mean": 0.696865439414978,
+        "ncc_std": 0.23232987523078918,
+        "rmse_mean": 0.6639332175254822,
+        "rmse_std": 0.17687445878982544
+      },
+      "15": {
+        "ncc_mean": 0.7001956105232239,
+        "ncc_std": 0.23098699748516083,
+        "rmse_mean": 0.6547188758850098,
+        "rmse_std": 0.17924880981445312
+      }
+    }
+  }
+}

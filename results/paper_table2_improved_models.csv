@@ -1,0 +1,14 @@
+model,track,status,selected_checkpoint,selected_epoch,selected_phase,ncc_mean,ncc_-15dB,ncc_-10dB,ncc_-5dB,ncc_0dB,ncc_+5dB,ncc_+10dB,ncc_+15dB,rmse_mean,snr_improvement_dB,dice_mean,fpr,grounded_real_ncc_mean,params_M,latency_ms_b1
+MR-TAE-FULL-IDWT (no-phase),results_idwt_nophase,ok,selected_final.pt,,,0.8037,0.3726,0.6686,0.8449,0.9145,0.9365,0.9434,0.9452,0.1208,6.8871,0.8960,0.2739,0.2550,2.9238,24.8416
+MR-TAE-FULL-IDWT (phased),results_idwt_phased,ok,selected_final.pt,,,0.8018,0.3529,0.6558,0.8433,0.9189,0.9420,0.9490,0.9505,0.1199,7.0125,0.9014,0.2455,0.3935,2.9238,8.7368
+"MR-TAE-FULL (linear, phased)",results_full_linear_phased,ok,selected_final.pt,,,0.8000,0.3529,0.6530,0.8411,0.9175,0.9403,0.9470,0.9483,0.1209,6.9357,0.9009,0.2360,0.4736,3.0535,26.8556
+"MR-TAE-FULL (linear, Q.Lin cheat)",results_qlin_cheat_linear,ok,selected_final.pt,,,0.7531,0.1565,0.5404,0.7791,0.8973,0.9508,0.9706,0.9771,0.1257,7.3480,0.7269,0.1714,0.7871,3.0535,6.8429
+MR-TAE-FULL-IDWT (Q.Lin cheat),results_qlin_cheat_idwt,ok,selected_final.pt,,,0.7182,0.1270,0.4803,0.7316,0.8595,0.9234,0.9484,0.9569,0.1409,5.8692,0.7300,0.1988,0.7846,2.9238,7.2477
+"MR-TAE-FULL (linear, no-phase)",results_full_linear_nophase,ok,selected_final.pt,,,0.8138,0.3831,0.6797,0.8550,0.9245,0.9462,0.9531,0.9547,0.1164,7.3263,0.9022,0.2377,0.4128,3.0535,19.5713
+MR-TAE-FULL (NoMix),results_nomix,ok,selected_final.pt,,,0.8282,0.3777,0.6763,0.8581,0.9381,0.9717,0.9853,0.9902,0.1014,9.6438,0.9192,0.2584,0.4535,3.0535,17.1312
+"MR-TAE-FULL (NoMix, Q.Lin cheat)",results_nomix_qlin_cheat,ok,selected_final.pt,,,0.7728,0.2043,0.5803,0.8022,0.9080,0.9561,0.9758,0.9830,0.1212,7.8971,0.7706,0.1920,0.8039,3.0535,16.8185
+MR-TAE-FULL-LossB-IDWT (phased),results_full_lossb_idwt_phased,ok,selected_final.pt,,,0.7858,0.3360,0.6339,0.8255,0.9039,0.9284,0.9358,0.9368,0.1273,6.3291,0.8995,0.2570,0.5173,2.9238,24.4558
+"MR-TAE-FULL-LossB (linear, phased)",results_full_lossb_linear_phased,ok,selected_final.pt,,,0.7920,0.3435,0.6418,0.8325,0.9094,0.9334,0.9406,0.9426,0.1247,6.5732,0.8990,0.2546,0.2334,3.0535,29.5567
+Wiener,results,ok,N/A (classical),,,0.5897,0.1520,0.2664,0.4526,0.6692,0.8124,0.8767,0.8986,0.3264,0.3924,,,0.6641,0.0000,0.3640
+BayesShrink,results,ok,N/A (classical),,,0.6578,0.1575,0.3003,0.5344,0.7701,0.9032,0.9591,0.9798,0.2722,2.7312,,,0.6844,0.0000,1.0303
+Savitzky-Golay,results,ok,N/A (classical),,,0.0351,0.0098,0.0175,0.0251,0.0341,0.0414,0.0502,0.0673,0.3154,-1.6588,,,0.5915,0.0000,0.7352

@@ -1,0 +1,367 @@
+{
+  "results/MR-TAE-FULL": {
+    "n_checkpoints": 15,
+    "max_epoch": 109,
+    "files": [
+      "best.pt",
+      "best_demo.pt",
+      "best_final.pt",
+      "checkpoint_epoch0010.pt",
+      "checkpoint_epoch0020.pt",
+      "checkpoint_epoch0030.pt",
+      "checkpoint_epoch0040.pt",
+      "checkpoint_epoch0050.pt",
+      "checkpoint_epoch0060.pt",
+      "checkpoint_epoch0070.pt",
+      "checkpoint_epoch0080.pt",
+      "checkpoint_epoch0090.pt",
+      "checkpoint_epoch0100.pt",
+      "checkpoint_epoch0110.pt",
+      "interrupt.pt"
+    ]
+  },
+  "results/MR-TAE-FULL-IDWT": {
+    "n_checkpoints": 6,
+    "max_epoch": 45,
+    "files": [
+      "best.pt",
+      "checkpoint_epoch0010.pt",
+      "checkpoint_epoch0020.pt",
+      "checkpoint_epoch0030.pt",
+      "checkpoint_epoch0040.pt",
+      "interrupt.pt"
+    ]
+  },
+  "results/MR-TAE-FULL-LossB": {
+    "n_checkpoints": 14,
+    "max_epoch": 109,
+    "files": [
+      "best.pt",
+      "best_demo.pt",
+      "best_final.pt",
+      "checkpoint_epoch0010.pt",
+      "checkpoint_epoch0020.pt",
+      "checkpoint_epoch0030.pt",
+      "checkpoint_epoch0040.pt",
+      "checkpoint_epoch0050.pt",
+      "checkpoint_epoch0060.pt",
+      "checkpoint_epoch0070.pt",
+      "checkpoint_epoch0080.pt",
+      "checkpoint_epoch0090.pt",
+      "checkpoint_epoch0100.pt",
+      "checkpoint_epoch0110.pt"
+    ]
+  },
+  "results/MR-TAE-FULL-LossC": {
+    "n_checkpoints": 13,
+    "max_epoch": 99,
+    "files": [
+      "best.pt",
+      "best_demo.pt",
+      "best_final.pt",
+      "checkpoint_epoch0010.pt",
+      "checkpoint_epoch0020.pt",
+      "checkpoint_epoch0030.pt",
+      "checkpoint_epoch0040.pt",
+      "checkpoint_epoch0050.pt",
+      "checkpoint_epoch0060.pt",
+      "checkpoint_epoch0070.pt",
+      "checkpoint_epoch0080.pt",
+      "checkpoint_epoch0090.pt",
+      "checkpoint_epoch0100.pt"
+    ]
+  },
+  "results/MR-TAE-noAttn": {
+    "n_checkpoints": 13,
+    "max_epoch": 99,
+    "files": [
+      "best.pt",
+      "best_demo.pt",
+      "best_final.pt",
+      "checkpoint_epoch0010.pt",
+      "checkpoint_epoch0020.pt",
+      "checkpoint_epoch0030.pt",
+      "checkpoint_epoch0040.pt",
+      "checkpoint_epoch0050.pt",
+      "checkpoint_epoch0060.pt",
+      "checkpoint_epoch0070.pt",
+      "checkpoint_epoch0080.pt",
+      "checkpoint_epoch0090.pt",
+      "checkpoint_epoch0100.pt"
+    ]
+  },
+  "results/MR-TAE-noBiGRU": {
+    "n_checkpoints": 13,
+    "max_epoch": 99,
+    "files": [
+      "best.pt",
+      "best_demo.pt",
+      "best_final.pt",
+      "checkpoint_epoch0010.pt",
+      "checkpoint_epoch0020.pt",
+      "checkpoint_epoch0030.pt",
+      "checkpoint_epoch0040.pt",
+      "checkpoint_epoch0050.pt",
+      "checkpoint_epoch0060.pt",
+      "checkpoint_epoch0070.pt",
+      "checkpoint_epoch0080.pt",
+      "checkpoint_epoch0090.pt",
+      "checkpoint_epoch0100.pt"
+    ]
+  },
+  "results/MR-TAE-noBiGRU-noAttn": {
+    "n_checkpoints": 13,
+    "max_epoch": 99,
+    "files": [
+      "best.pt",
+      "best_demo.pt",
+      "best_final.pt",
+      "checkpoint_epoch0010.pt",
+      "checkpoint_epoch0020.pt",
+      "checkpoint_epoch0030.pt",
+      "checkpoint_epoch0040.pt",
+      "checkpoint_epoch0050.pt",
+      "checkpoint_epoch0060.pt",
+      "checkpoint_epoch0070.pt",
+      "checkpoint_epoch0080.pt",
+      "checkpoint_epoch0090.pt",
+      "checkpoint_epoch0100.pt"
+    ]
+  },
+  "results/MR-TAE-noMTL": {
+    "n_checkpoints": 13,
+    "max_epoch": 99,
+    "files": [
+      "best.pt",
+      "best_demo.pt",
+      "best_final.pt",
+      "checkpoint_epoch0010.pt",
+      "checkpoint_epoch0020.pt",
+      "checkpoint_epoch0030.pt",
+      "checkpoint_epoch0040.pt",
+      "checkpoint_epoch0050.pt",
+      "checkpoint_epoch0060.pt",
+      "checkpoint_epoch0070.pt",
+      "checkpoint_epoch0080.pt",
+      "checkpoint_epoch0090.pt",
+      "checkpoint_epoch0100.pt"
+    ]
+  },
+  "results/MR-TAE-noSwin": {
+    "n_checkpoints": 13,
+    "max_epoch": 99,
+    "files": [
+      "best.pt",
+      "best_demo.pt",
+      "best_final.pt",
+      "checkpoint_epoch0010.pt",
+      "checkpoint_epoch0020.pt",
+      "checkpoint_epoch0030.pt",
+      "checkpoint_epoch0040.pt",
+      "checkpoint_epoch0050.pt",
+      "checkpoint_epoch0060.pt",
+      "checkpoint_epoch0070.pt",
+      "checkpoint_epoch0080.pt",
+      "checkpoint_epoch0090.pt",
+      "checkpoint_epoch0100.pt"
+    ]
+  },
+  "results/MR-TAE-noSwin-noAttn": {
+    "n_checkpoints": 18,
+    "max_epoch": 109,
+    "files": [
+      "best.pt",
+      "best_demo.pt",
+      "best_final.pt",
+      "best_phase3.pt",
+      "checkpoint_epoch0010.pt",
+      "checkpoint_epoch0020.pt",
+      "checkpoint_epoch0030.pt",
+      "checkpoint_epoch0040.pt",
+      "checkpoint_epoch0050.pt",
+      "checkpoint_epoch0060.pt",
+      "checkpoint_epoch0070.pt",
+      "checkpoint_epoch0080.pt",
+      "checkpoint_epoch0090.pt",
+      "checkpoint_epoch0100.pt",
+      "checkpoint_epoch0110.pt",
+      "interrupt.pt",
+      "last.pt",
+      "selected_final.pt"
+    ]
+  },
+  "results/MR-TAE-noSwin-noBiGRU": {
+    "n_checkpoints": 18,
+    "max_epoch": 109,
+    "files": [
+      "best.pt",
+      "best_demo.pt",
+      "best_final.pt",
+      "best_phase3.pt",
+      "checkpoint_epoch0010.pt",
+      "checkpoint_epoch0020.pt",
+      "checkpoint_epoch0030.pt",
+      "checkpoint_epoch0040.pt",
+      "checkpoint_epoch0050.pt",
+      "checkpoint_epoch0060.pt",
+      "checkpoint_epoch0070.pt",
+      "checkpoint_epoch0080.pt",
+      "checkpoint_epoch0090.pt",
+      "checkpoint_epoch0100.pt",
+      "checkpoint_epoch0110.pt",
+      "interrupt.pt",
+      "last.pt",
+      "selected_final.pt"
+    ]
+  },
+  "results/MR-TAE-noWavelet": {
+    "n_checkpoints": 13,
+    "max_epoch": 99,
+    "files": [
+      "best.pt",
+      "best_demo.pt",
+      "best_final.pt",
+      "checkpoint_epoch0010.pt",
+      "checkpoint_epoch0020.pt",
+      "checkpoint_epoch0030.pt",
+      "checkpoint_epoch0040.pt",
+      "checkpoint_epoch0050.pt",
+      "checkpoint_epoch0060.pt",
+      "checkpoint_epoch0070.pt",
+      "checkpoint_epoch0080.pt",
+      "checkpoint_epoch0090.pt",
+      "checkpoint_epoch0100.pt"
+    ]
+  },
+  "results/MWCNN-BiGRU": {
+    "n_checkpoints": 13,
+    "max_epoch": 99,
+    "files": [
+      "best.pt",
+      "best_demo.pt",
+      "best_final.pt",
+      "checkpoint_epoch0010.pt",
+      "checkpoint_epoch0020.pt",
+      "checkpoint_epoch0030.pt",
+      "checkpoint_epoch0040.pt",
+      "checkpoint_epoch0050.pt",
+      "checkpoint_epoch0060.pt",
+      "checkpoint_epoch0070.pt",
+      "checkpoint_epoch0080.pt",
+      "checkpoint_epoch0090.pt",
+      "checkpoint_epoch0100.pt"
+    ]
+  },
+  "results/UNet-BiGRU-Swin": {
+    "n_checkpoints": 13,
+    "max_epoch": 99,
+    "files": [
+      "best.pt",
+      "best_demo.pt",
+      "best_final.pt",
+      "checkpoint_epoch0010.pt",
+      "checkpoint_epoch0020.pt",
+      "checkpoint_epoch0030.pt",
+      "checkpoint_epoch0040.pt",
+      "checkpoint_epoch0050.pt",
+      "checkpoint_epoch0060.pt",
+      "checkpoint_epoch0070.pt",
+      "checkpoint_epoch0080.pt",
+      "checkpoint_epoch0090.pt",
+      "checkpoint_epoch0100.pt"
+    ]
+  },
+  "results_full_linear_phased/MR-TAE-FULL": {
+    "n_checkpoints": 15,
+    "max_epoch": 109,
+    "files": [
+      "best.pt",
+      "best_phase3.pt",
+      "checkpoint_epoch0010.pt",
+      "checkpoint_epoch0020.pt",
+      "checkpoint_epoch0030.pt",
+      "checkpoint_epoch0040.pt",
+      "checkpoint_epoch0050.pt",
+      "checkpoint_epoch0060.pt",
+      "checkpoint_epoch0070.pt",
+      "checkpoint_epoch0080.pt",
+      "checkpoint_epoch0090.pt",
+      "checkpoint_epoch0100.pt",
+      "checkpoint_epoch0110.pt",
+      "last.pt",
+      "selected_final.pt"
+    ]
+  },
+  "results_full_lossb_linear_phased/MR-TAE-FULL-LossB": {
+    "n_checkpoints": 7,
+    "max_epoch": 59,
+    "files": [
+      "best.pt",
+      "checkpoint_epoch0010.pt",
+      "checkpoint_epoch0020.pt",
+      "checkpoint_epoch0030.pt",
+      "checkpoint_epoch0040.pt",
+      "checkpoint_epoch0050.pt",
+      "checkpoint_epoch0060.pt"
+    ]
+  },
+  "results_full_lossb_idwt_phased/MR-TAE-FULL-LossB-IDWT": {
+    "n_checkpoints": 15,
+    "max_epoch": 109,
+    "files": [
+      "best.pt",
+      "best_phase3.pt",
+      "checkpoint_epoch0010.pt",
+      "checkpoint_epoch0020.pt",
+      "checkpoint_epoch0030.pt",
+      "checkpoint_epoch0040.pt",
+      "checkpoint_epoch0050.pt",
+      "checkpoint_epoch0060.pt",
+      "checkpoint_epoch0070.pt",
+      "checkpoint_epoch0080.pt",
+      "checkpoint_epoch0090.pt",
+      "checkpoint_epoch0100.pt",
+      "checkpoint_epoch0110.pt",
+      "last.pt",
+      "selected_final.pt"
+    ]
+  },
+  "results_idwt_nophase/MR-TAE-FULL-IDWT": {
+    "n_checkpoints": 14,
+    "max_epoch": 109,
+    "files": [
+      "best.pt",
+      "checkpoint_epoch0010.pt",
+      "checkpoint_epoch0020.pt",
+      "checkpoint_epoch0030.pt",
+      "checkpoint_epoch0040.pt",
+      "checkpoint_epoch0050.pt",
+      "checkpoint_epoch0060.pt",
+      "checkpoint_epoch0070.pt",
+      "checkpoint_epoch0080.pt",
+      "checkpoint_epoch0090.pt",
+      "checkpoint_epoch0100.pt",
+      "checkpoint_epoch0110.pt",
+      "last.pt",
+      "selected_final.pt"
+    ]
+  },
+  "results_idwt_phased/MR-TAE-FULL-IDWT": {
+    "n_checkpoints": 12,
+    "max_epoch": 109,
+    "files": [
+      "best.pt",
+      "best_phase3.pt",
+      "checkpoint_epoch0040.pt",
+      "checkpoint_epoch0050.pt",
+      "checkpoint_epoch0060.pt",
+      "checkpoint_epoch0070.pt",
+      "checkpoint_epoch0080.pt",
+      "checkpoint_epoch0090.pt",
+      "checkpoint_epoch0100.pt",
+      "checkpoint_epoch0110.pt",
+      "last.pt",
+      "selected_final.pt"
+    ]
+  }
+}

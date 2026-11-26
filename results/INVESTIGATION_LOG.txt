@@ -1,0 +1,36 @@
+INVESTIGATION START
+[TASK0] Generated FULL_DIRECTORY_MAP.txt and OLD_CODEBASE_MAP.txt
+[SETUP] Set PYTHONPATH to project root
+[TASK1a] Wrote IDWT_SEARCH.txt and IDWT_GIT_LOG.txt
+[TASK1a] Killed long scan process; will rerun scoped scan excluding large folders
+[TASK1a] Completed IDWT search in core code only
+[TASK1b] Ran IDWT shape test
+[TASK1b/1c] Ran shape and roundtrip tests with PYTHONPATH=Try Model
+[TASK1a] Captured mwcnn.py git history
+[TASK1d] Wrote IDWT_ROOT_CAUSE.txt
+[TASK2] Wrote SEG_HEAD_SEARCH.txt
+[TASK2] Wrote SEG_HEAD_VARIANTS.txt
+[TASK3a] Checked checkpoint for IDWT-specific keys
+[TASK3] Created IDWT comparison placeholders with failure rationale
+[TASK4a] Stopped hung run_definitive_benchmark.py after extended no-output runtime
+[TASK4b] Computed robustness ranking from definitive benchmark JSONs
+[TASK4c] Ran focused hard-noise test for top-3 robustness models
+[TASK5] Completed duplicate/checkpoint audit and old-path scan
+[TASK5] Completed duplicate/checkpoint audit and old-path scan
+[TASK6] Generated FILES_NEEDING_PATH_FIX.txt from old path scan
+[TASK6] Applied path fixes to hardcoded OneDrive paths and refreshed reports
+[TASK7] Enabled IDWT variant and validated forward pass; pending experiment logged
+[TASK8a] Created MR_TAE_GITHUB and copied requested artifacts
+[TASK8b/8c] Wrote README.md and .gitignore in MR_TAE_GITHUB
+[TASK8d] Evaluated checkpoint size for release packaging
+[TASK9] Wrote INVESTIGATION_SUMMARY.md
+[FINDING][TASK0] python_files_total=36660
+[FINDING][TASK0] checkpoint_count=182
+[FINDING][TASK0] mixed_results_dirs=1
+[FINDING][TASK1] captured=IDWT_SHAPE_TEST.txt
+[FINDING][TASK1] captured=DWT_ROUNDTRIP_TEST.txt
+[FINDING][TASK1] captured=IDWT_ROOT_CAUSE.txt
+[FINDING][TASK2] segmentation variants documented
+[FINDING][TASK4] top3=[('MR-TAE-FULL', 0.4663), ('MR-TAE-noBiGRU-noAttn', 0.4436), ('MR-TAE-FULL-LossB', 0.4282)]
+[FINDING][TASK6] remaining_onedrive_refs=0
+[FINDING][TASK8] github_files=28

@@ -1,0 +1,80 @@
+{
+  "MR-TAE-FULL": {
+    "lat_ms_b1": 26.87710312497984,
+    "lat_ms_b32": 0.6115685937544413,
+    "params_M": 3.009686,
+    "registry_attn": true
+  },
+  "MR-TAE-noBiGRU": {
+    "lat_ms_b1": 21.765773124889165,
+    "lat_ms_b32": 0.7114771875023962,
+    "params_M": 2.39478,
+    "registry_attn": true
+  },
+  "MR-TAE-noSwin": {
+    "lat_ms_b1": 15.400563750154106,
+    "lat_ms_b32": 0.5734337499944786,
+    "params_M": 1.406636,
+    "registry_attn": true
+  },
+  "MR-TAE-noAttn": {
+    "lat_ms_b1": 18.84095125017211,
+    "lat_ms_b32": 0.6051736718688971,
+    "params_M": 3.009686,
+    "registry_attn": false
+  },
+  "MR-TAE-noMTL": {
+    "lat_ms_b1": 19.80894187515787,
+    "lat_ms_b32": 0.7627279687397959,
+    "params_M": 3.003479,
+    "registry_attn": true
+  },
+  "MR-TAE-noWavelet": {
+    "lat_ms_b1": 21.073078749850538,
+    "lat_ms_b32": 0.6673662499906641,
+    "params_M": 2.98998,
+    "registry_attn": true
+  },
+  "MR-TAE-noSwin-noBiGRU": {
+    "lat_ms_b1": 16.233703125135435,
+    "lat_ms_b32": 0.5560201562474276,
+    "params_M": 1.011116,
+    "registry_attn": true
+  },
+  "MR-TAE-noSwin-noAttn": {
+    "lat_ms_b1": 12.408426874867473,
+    "lat_ms_b32": 0.42699249999600397,
+    "params_M": 1.362854,
+    "registry_attn": false
+  },
+  "MR-TAE-noBiGRU-noAttn": {
+    "lat_ms_b1": 17.70463437496801,
+    "lat_ms_b32": 0.5621537499962415,
+    "params_M": 2.350998,
+    "registry_attn": false
+  },
+  "MR-TAE-FULL-LossB": {
+    "lat_ms_b1": 22.037653750089703,
+    "lat_ms_b32": 0.7511385156135475,
+    "params_M": 3.053468,
+    "registry_attn": true
+  },
+  "MR-TAE-FULL-LossC": {
+    "lat_ms_b1": 24.243333750177953,
+    "lat_ms_b32": 0.7546867187528505,
+    "params_M": 3.053468,
+    "registry_attn": true
+  },
+  "MWCNN-BiGRU": {
+    "lat_ms_b1": 11.033426249991862,
+    "lat_ms_b32": 0.2897817968715799,
+    "params_M": 1.312865,
+    "registry_attn": false
+  },
+  "UNet-BiGRU-Swin": {
+    "lat_ms_b1": 15.567160625050747,
+    "lat_ms_b32": 0.4590790624888541,
+    "params_M": 2.896209,
+    "registry_attn": false
+  }
+}

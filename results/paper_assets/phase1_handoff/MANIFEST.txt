@@ -1,0 +1,18 @@
+MISSING OoJianHong-22004678-Report.pdf (see MISSING_*.txt)
+OK  ARCHITECTURE_SUMMARY.md <= docs\ARCHITECTURE_SUMMARY.md
+OK  RESULTS_COMPARISON.md <= RESULTS_COMPARISON.md
+OK  FINAL_VERDICT.md <= docs\FINAL_VERDICT.md
+OK  FULL_RESEARCH_PLAN.md <= FULL_RESEARCH_PLAN.md
+OK  EXAMINER_QA.md <= docs\EXAMINER_QA.md
+OK  AGENT_PLAN.md <= AGENT_PLAN.md
+OK  CODEBASE_AUDIT.md <= docs\CODEBASE_AUDIT.md
+OK  PROJECT_STATUS.md <= PROJECT_STATUS.md
+OK  benchmark_results.json (15 model folders)
+OK  (mirror) results\paper_assets\benchmark_results.json
+OK  ARXIV_PAPER_HANDOFF.md
+OK  figures/waveform_comparison_3snr.png
+OK  figures/ncc_bar_13models.png
+OK  figures/architecture_diagram.png
+OK  figures/ablation_heatmap.png
+OK  figures/snr_sweep.png
+OK  figures/training_curves.png

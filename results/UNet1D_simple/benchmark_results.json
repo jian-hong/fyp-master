@@ -1,0 +1,114 @@
+{
+  "model_id": "UNet1D_simple",
+  "checkpoint": "results\\UNet1D_simple\\checkpoints\\selected_final.pt",
+  "ablation_source": "evaluation/classical_baselines.py",
+  "hybrid_savgol_gamma_nn": null,
+  "synthetic": {
+    "ncc_mean": 0.8015961050987244,
+    "ncc_std": 0.2506040632724762,
+    "rmse_mean": 0.10539201647043228,
+    "rmse_std": 0.0752873569726944,
+    "snr_improvement_mean": 9.798698425292969,
+    "snr_improvement_std": 3.538785696029663,
+    "dice_mean": null,
+    "dice_std": null,
+    "false_positive_rate": null,
+    "per_snr_ncc": {
+      "-15": {
+        "ncc_mean": 0.2948892414569855,
+        "ncc_std": 0.09916289895772934
+      },
+      "-10": {
+        "ncc_mean": 0.59731125831604,
+        "ncc_std": 0.09562455117702484
+      },
+      "-5": {
+        "ncc_mean": 0.8315094709396362,
+        "ncc_std": 0.04869884252548218
+      },
+      "0": {
+        "ncc_mean": 0.9322596192359924,
+        "ncc_std": 0.02163083665072918
+      },
+      "5": {
+        "ncc_mean": 0.9722791910171509,
+        "ncc_std": 0.008964357897639275
+      },
+      "10": {
+        "ncc_mean": 0.9882862567901611,
+        "ncc_std": 0.0037253538612276316
+      },
+      "15": {
+        "ncc_mean": 0.994637668132782,
+        "ncc_std": 0.0016753674717620015
+      }
+    },
+    "segmentation_note": "Denoiser-only baseline \u2014 no segmentation head; Dice/FPR N/A."
+  },
+  "real_qlin": {
+    "ncc_mean": 0.6907621026039124,
+    "ncc_std": 0.1260996311903,
+    "rmse_mean": 0.7736887335777283,
+    "rmse_std": 0.08820515125989914,
+    "n_windows_evaluated": 20000,
+    "reference": "input_window",
+    "note": "No clean ground truth; NCC/RMSE vs observed window."
+  },
+  "real_qlin_grounded": {
+    "ncc_mean": 0.42134344577789307,
+    "ncc_std": 0.21512438356876373,
+    "rmse_mean": 0.9091159105300903,
+    "rmse_std": 0.09044507890939713,
+    "n_windows_evaluated": 35000,
+    "reference": "clean_ground_truth",
+    "per_snr": {
+      "-15": {
+        "ncc_mean": 0.11834792792797089,
+        "ncc_std": 0.03952829912304878,
+        "rmse_mean": 0.9936496019363403,
+        "rmse_std": 0.0033111474476754665
+      },
+      "-10": {
+        "ncc_mean": 0.21400600671768188,
+        "ncc_std": 0.06683710217475891,
+        "rmse_mean": 0.9884257912635803,
+        "rmse_std": 0.005440846085548401
+      },
+      "-5": {
+        "ncc_mean": 0.3564762473106384,
+        "ncc_std": 0.09553518146276474,
+        "rmse_mean": 0.9714069366455078,
+        "rmse_std": 0.0165831558406353
+      },
+      "0": {
+        "ncc_mean": 0.4535427689552307,
+        "ncc_std": 0.11898595094680786,
+        "rmse_mean": 0.9205065369606018,
+        "rmse_std": 0.041182223707437515
+      },
+      "5": {
+        "ncc_mean": 0.5444686412811279,
+        "ncc_std": 0.1316600888967514,
+        "rmse_mean": 0.8648003935813904,
+        "rmse_std": 0.06523275375366211
+      },
+      "10": {
+        "ncc_mean": 0.6100335121154785,
+        "ncc_std": 0.12956765294075012,
+        "rmse_mean": 0.8256086111068726,
+        "rmse_std": 0.07645180821418762
+      },
+      "15": {
+        "ncc_mean": 0.6525291204452515,
+        "ncc_std": 0.12752582132816315,
+        "rmse_mean": 0.7994135618209839,
+        "rmse_std": 0.08205226808786392
+      }
+    }
+  },
+  "efficiency": {
+    "param_count_M": 2.6879,
+    "inference_latency_ms_b1": 2.3476,
+    "inference_latency_ms_b32": 0.254
+  }
+}

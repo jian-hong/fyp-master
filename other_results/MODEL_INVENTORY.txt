@@ -1,0 +1,21 @@
+MR-TAE Model Inventory — 2026-05-17T15:31:37.701843
+==============================================================================================================
+
+Model ID                            Exists   Epoch    Phase    #Params      #Tensors   State Key          Status       Val NCC   
+--------------------------------------------------------------------------------------------------------------
+MR-TAE-FULL                         True     38       3        3018058      208        model_state        OK           N/A       
+MR-TAE-noBiGRU                      True     91       3        2403539      223        model_state        OK           N/A       
+MR-TAE-noSwin                       True     95       3        1413347      209        model_state        OK           N/A       
+MR-TAE-noAttn                       True     85       3        3018058      208        model_state        OK           N/A       
+MR-TAE-noMTL                        True     87       3        3011786      211        model_state        OK           N/A       
+MR-TAE-noWavelet                    True     91       3        2995155      235        model_state        OK           N/A       
+MR-TAE-noSwin-noBiGRU               True     93       3        1018853      201        model_state        OK           N/A       
+MR-TAE-noSwin-noAttn                True     91       3        1369178      176        model_state        OK           N/A       
+MR-TAE-noBiGRU-noAttn               True     95       3        2359370      190        model_state        OK           N/A       
+MR-TAE-FULL-LossB                   True     85       3        3018058      208        model_state        OK           N/A       
+MR-TAE-FULL-LossC                   True     91       3        3062227      241        model_state        OK           N/A       
+MWCNN-BiGRU                         True     76       3        1318737      146        model_state        OK           N/A       
+UNet-BiGRU-Swin                     True     95       3        2900545      172        model_state        OK           N/A       
+
+Flag INCOMPLETE if total_epochs < 85 OR final curriculum phase < 3
+Note: best.pt epoch = epoch of best val_ncc checkpoint, not final training epoch.

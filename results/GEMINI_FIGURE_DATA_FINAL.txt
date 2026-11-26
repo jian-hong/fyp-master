@@ -1,0 +1,36 @@
+FIGURE 5 (FINAL) — NCC vs Input SNR: Improved Models vs Classical Baselines
+For Gemini: generate a line chart with these exact data points.
+
+X-axis: Input SNR in dB: -15, -10, -5, 0, +5
+Y-axis: Synthetic NCC (vs clean ground truth), range 0.0 to 1.0
+
+LINES:
+  MR-TAE-FULL-IDWT (no-phase, solid green, BEST MODEL):
+    -15: 0.3726, -10: 0.6655, -5: 0.8461, 0: 0.9140, +5: 0.9355
+  MR-TAE-FULL-IDWT (phased, dashed dark green):
+    -15: 0.3528, -10: 0.6529, -5: 0.8442, 0: 0.9191, +5: 0.9417
+  MR-TAE-FULL linear phased (solid blue):
+    -15: 0.3516, -10: 0.6504, -5: 0.8423, 0: 0.9177, +5: 0.9401
+  MR-TAE-FULL-LossB-IDWT (dash-dot blue):
+    -15: 0.3378, -10: 0.6298, -5: 0.8271, 0: 0.9042, +5: 0.9280
+  Wiener filter (dotted grey):
+    -15: 0.1514, -10: 0.2680, -5: 0.4532, 0: 0.6667, +5: 0.8117
+  BayesShrink (dotted light grey):
+    -15: 0.0985, -10: 0.2011, -5: 0.4311, 0: 0.7000, +5: 0.8667
+
+ANNOTATION: Arrow pointing to IDWT no-phase at -15dB with label "Best: 0.3726"
+CAPTION: Synthetic NCC (vs clean ground truth) across input SNR levels. MR-TAE-FULL-IDWT
+(no-phase curriculum) achieves the highest NCC at extreme noise (-15 dB = 0.3726),
+outperforming the Wiener filter by 146% and BayesShrink by 278% at this operating point.
+All deep models converge above 0.93 at +5 dB while classical methods plateau at 0.81-0.87.
+
+--- TABLE 2 DATA (paste into Gemini for table generation) ---
+Model                         | Epoch | -15dB  | -10dB  | -5dB   | 0dB    | +5dB   | Mean   | Real input-ref
+MR-TAE-FULL-IDWT (no-phase)   | 109   | 0.3726 | 0.6655 | 0.8461 | 0.9140 | 0.9355 | 0.7467 | 0.2326
+MR-TAE-FULL-IDWT (phased)     | 109   | 0.3528 | 0.6529 | 0.8442 | 0.9191 | 0.9417 | 0.7421 | 0.3240
+MR-TAE-FULL (linear, phased)  | 109   | 0.3516 | 0.6504 | 0.8423 | 0.9177 | 0.9401 | 0.7404 | 0.4903
+MR-TAE-FULL-LossB-IDWT        | 102   | 0.3378 | 0.6298 | 0.8271 | 0.9042 | 0.9280 | 0.7254 | 0.4983
+MR-TAE-FULL-LossB (partial)   | 39*   | 0.1870 | 0.3397 | 0.6211 | 0.8888 | 0.9613 | 0.5996 | 0.6094
+Wiener filter                  | N/A   | 0.1514 | 0.2680 | 0.4532 | 0.6667 | 0.8117 | 0.4702 | N/A
+BayesShrink wavelet            | N/A   | 0.0985 | 0.2011 | 0.4311 | 0.7000 | 0.8667 | 0.4595 | N/A
+*LossB partial: Phase 1 complete only. Final numbers pending Phase 3 completion.

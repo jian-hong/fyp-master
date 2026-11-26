@@ -1,0 +1,76 @@
+Try Model/mr_tae_fusion/config.py:29:    # 0: Background, 1: Corona, 2: Surface, 3: Internal, 4: Treeing
+Try Model/mr_tae_fusion/config.py:40:    num_classes: int = 5  # Background + 4 defect types (Corona, Surface, Internal, Treeing)
+Try Model/mr_tae_fusion/config.py:49:    impulse_variance_factor: float = 10.0  # σ_imp² >> σ_background²
+Try Model/mr_tae_fusion/config.py:87:    num_classes: int = 5  # Background + Corona + Surface + Internal + Treeing
+Try Model/mr_tae_fusion/config.py:199:        self.model.num_classes = self.signal.num_classes
+Try Model/mr_tae_fusion/data/distance_signals.py:2:Distance-based PD signal generator for 4-class classification.
+Try Model/mr_tae_fusion/data/distance_signals.py:143:    gap_distance_mm: float,
+Try Model/mr_tae_fusion/data/distance_signals.py:157:    d_m = gap_distance_mm / 1000.0
+Try Model/mr_tae_fusion/data/distance_signals.py:197:    Generates Acoustic Emission Partial Discharge (AEPD) background noise.
+Try Model/mr_tae_fusion/data/mat_loader.py:172:    indicating background noise without PD pulses.
+Try Model/mr_tae_fusion/evaluation/explainability.py:10:def explain_model_with_shap(model, background_data, test_data, device):
+Try Model/mr_tae_fusion/evaluation/explainability.py:17:        background_data: (N, 1, 2048) background noise tensors
+Try Model/mr_tae_fusion/evaluation/explainability.py:42:    background = torch.tensor(background_data, dtype=torch.float32).to(device)
+Try Model/mr_tae_fusion/evaluation/explainability.py:46:    explainer = shap.GradientExplainer(wrapper, background)
+Try Model/mr_tae_fusion/evaluation/metrics.py:164:    num_classes: int = 4,
+Try Model/mr_tae_fusion/evaluation/metrics.py:165:    ignore_background: bool = False
+Try Model/mr_tae_fusion/evaluation/metrics.py:173:        num_classes: Number of classes
+Try Model/mr_tae_fusion/evaluation/metrics.py:174:        ignore_background: Whether to exclude class 0
+Try Model/mr_tae_fusion/evaluation/metrics.py:190:    start_class = 1 if ignore_background else 0
+Try Model/mr_tae_fusion/evaluation/metrics.py:192:    for c in range(start_class, num_classes):
+Try Model/mr_tae_fusion/evaluation/metrics.py:212:    num_classes: int = 4,
+Try Model/mr_tae_fusion/evaluation/metrics.py:213:    ignore_background: bool = False
+Try Model/mr_tae_fusion/evaluation/metrics.py:223:        num_classes: Number of classes
+Try Model/mr_tae_fusion/evaluation/metrics.py:224:        ignore_background: Whether to exclude class 0
+Try Model/mr_tae_fusion/evaluation/metrics.py:240:    start_class = 1 if ignore_background else 0
+Try Model/mr_tae_fusion/evaluation/metrics.py:242:    for c in range(start_class, num_classes):
+Try Model/mr_tae_fusion/evaluation/metrics.py:352:    num_classes: int = 4
+Try Model/mr_tae_fusion/evaluation/metrics.py:360:        num_classes: Number of classes
+Try Model/mr_tae_fusion/evaluation/metrics.py:377:    iou_results = calculate_iou(pred_mask, target_mask, num_classes, ignore_background=True)
+Try Model/mr_tae_fusion/evaluation/metrics.py:378:    dice_results = calculate_dice(pred_mask, target_mask, num_classes, ignore_background=True)
+Try Model/mr_tae_fusion/evaluation/visualization.py:128:        class_names = ['Background', 'Corona', 'Surface', 'Internal']
+Try Model/mr_tae_fusion/evaluation/visualization.py:413:        class_names = ['Background', 'Corona', 'Surface', 'Internal']
+Try Model/mr_tae_fusion/evaluation/visualization.py:415:    num_classes = len(class_names)
+Try Model/mr_tae_fusion/evaluation/visualization.py:418:    cm = np.zeros((num_classes, num_classes), dtype=np.int64)
+Try Model/mr_tae_fusion/evaluation/visualization.py:420:        if t < num_classes and p < num_classes:
+Try Model/mr_tae_fusion/evaluation/visualization.py:434:    ax.set_xticks(range(num_classes))
+Try Model/mr_tae_fusion/evaluation/visualization.py:435:    ax.set_yticks(range(num_classes))
+Try Model/mr_tae_fusion/evaluation/visualization.py:444:    for i in range(num_classes):
+Try Model/mr_tae_fusion/evaluation/visualization.py:445:        for j in range(num_classes):
+Try Model/mr_tae_fusion/models/distance_classifier.py:4:4-class classification:
+Try Model/mr_tae_fusion/models/distance_classifier.py:20:    CNN-based classifier for distance-based PD signal classification.
+Try Model/mr_tae_fusion/models/distance_classifier.py:29:        num_classes: int = 4,
+Try Model/mr_tae_fusion/models/distance_classifier.py:39:        self.num_classes = num_classes
+Try Model/mr_tae_fusion/models/distance_classifier.py:71:            nn.Linear(64, num_classes)
+Try Model/mr_tae_fusion/models/distance_classifier.py:82:            Logits of shape (batch, num_classes)
+Try Model/mr_tae_fusion/models/distance_classifier.py:88:        # Classification
+Try Model/mr_tae_fusion/models/distance_classifier.py:108:    Combined model: MR-TAE-Fusion denoising + Distance classification.
+Try Model/mr_tae_fusion/models/distance_classifier.py:131:        Forward pass with denoising and classification.
+Try Model/mr_tae_fusion/models/distance_classifier.py:181:        num_classes=4
+Try Model/mr_tae_fusion/models/distance_classifier.py:218:        num_classes=4
+Try Model/mr_tae_fusion/models/fusion_head.py:5:for per-timestamp defect classification.
+Try Model/mr_tae_fusion/models/fusion_head.py:22:    Output: Per-timestamp class probabilities (B, num_classes, L)
+Try Model/mr_tae_fusion/models/fusion_head.py:28:        num_classes: Number of segmentation classes
+Try Model/mr_tae_fusion/models/fusion_head.py:37:        num_classes: int = 4,
+Try Model/mr_tae_fusion/models/fusion_head.py:42:        self.num_classes = num_classes
+Try Model/mr_tae_fusion/models/fusion_head.py:69:        # Final classification layer
+Try Model/mr_tae_fusion/models/fusion_head.py:70:        self.classifier = nn.Conv1d(fusion_channels // 2, num_classes, kernel_size=1)
+Try Model/mr_tae_fusion/models/fusion_head.py:87:            Segmentation logits (B, num_classes, L)
+Try Model/mr_tae_fusion/models/fusion_head.py:118:        # Final classification
+Try Model/mr_tae_fusion/models/fusion_head.py:177:        num_classes: Number of segmentation classes
+Try Model/mr_tae_fusion/models/fusion_head.py:185:        num_classes: int = 4
+Try Model/mr_tae_fusion/models/fusion_head.py:202:        self.classifier = nn.Conv1d(fusion_channels, num_classes, kernel_size=1)
+Try Model/mr_tae_fusion/models/fusion_head.py:217:            Segmentation logits (B, num_classes, L)
+Try Model/mr_tae_fusion/models/mr_tae_fusion.py:262:                num_classes=config.num_classes,
+Try Model/mr_tae_fusion/models/mr_tae_fusion.py:300:                x.shape[0], self.config.num_classes, input_length,
+Try Model/mr_tae_fusion/training/losses.py:44:            pred: Predicted logits (B, C, L) where C is num_classes
+Try Model/mr_tae_fusion/training/losses.py:50:        num_classes = pred.shape[1]
+Try Model/mr_tae_fusion/training/losses.py:56:        target_onehot = F.one_hot(target, num_classes=num_classes)  # (B, L, C)
+Try Model/mr_tae_fusion/training/losses.py:62:        for c in range(num_classes):
+Try Model/mr_tae_fusion/training/losses.py:119:        num_classes = pred.shape[1]
+Try Model/mr_tae_fusion/training/losses.py:122:        target_onehot = F.one_hot(target, num_classes=num_classes).permute(0, 2, 1).float()
+Try Model/mr_tae_fusion/training/losses.py:452:    - CCE provides pixel-wise classification
+training/heat_monitor.py:2:training/heat_monitor.py — Background GPU temperature watchdog thread.
+evaluation/generate_definitive_figures.py:2:Regenerate paper figures from results/definitive_benchmark/ (dpi=300, white background).
+evaluation/explainability/shap_analysis.py:64:    background  = batch["noisy"][n_samples:n_samples+20].unsqueeze(1).to(device)
+evaluation/explainability/shap_analysis.py:75:    explainer = shap.DeepExplainer(wrapper, background)

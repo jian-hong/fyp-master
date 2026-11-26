@@ -1,0 +1,45 @@
+# Environments and caches
+.venv/
+venv/
+myenv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+
+# Datasets, weights, and experiment stores (junior rebuilds or copies these locally)
+*.pt
+*.pth
+*.ckpt
+*.pkl
+*.pickle
+*.mat
+*.npy
+*.npz
+*.h5
+*.hdf5
+mlruns/
+logs/
+.snapshots/
+wandb/
+
+# Raw lab archive and bulky one-off downloads
+Datset from Q.lin/**
+!Datset from Q.lin/**/*.py
+!Datset from Q.lin/**/*.md
+!Datset from Q.lin/**/*.txt
+noisy_minus10dB_18mm.mat
+*.zip
+
+# Secrets
+.env
+.env.*
+*.key
+credentials.json
+
+# OS / editor
+.DS_Store
+Thumbs.db
+~$*
+*.bak

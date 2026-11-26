@@ -1,0 +1,4 @@
+{
+  "use_idwt=False": "NOT_RUN (decoder flag not exposed in current model API)",
+  "use_idwt=True": "FAILED (requires architecture change + retraining)"
+}

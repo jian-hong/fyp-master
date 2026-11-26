@@ -1,0 +1,78 @@
+# =============================================================================
+# AE-PD Denoising Research — requirements.txt
+# Python 3.11+ | RTX 4070 CUDA 13.0 target
+# Install: pip install -r requirements.txt
+# =============================================================================
+
+# ─── Core Deep Learning ──────────────────────────────────────────────────────
+torch>=2.1.0,<3.0.0              # PyTorch — CUDA 13.0 build recommended
+torchvision>=0.16.0              # Used for some transforms
+torchaudio>=2.1.0                # AE signal processing utilities
+nvidia-ml-py                       # Silence PyTorch pynvml deprecation (optional but recommended)
+
+# ─── Signal Processing ────────────────────────────────────────────────────────
+numpy>=1.26.0,<3.0.0             # Core array operations
+scipy>=1.11.0                    # .mat file loading (Lin et al. dataset), signal ops
+PyWavelets>=1.4.1                # DWT/IDWT for traditional baselines + MWCNN
+# torch-wavelets>=0.1.0          # GPU DWT — uncomment if migrating from WaveTF
+
+# ─── Machine Learning ─────────────────────────────────────────────────────────
+scikit-learn>=1.3.0              # Traditional baselines, metrics, preprocessing
+
+# ─── Experiment Tracking ──────────────────────────────────────────────────────
+mlflow>=2.8.0                    # Primary experiment tracker + model registry
+optuna>=3.4.0                    # Hyperparameter optimization
+optuna-integration>=3.0.0        # MLflow + Optuna integration callbacks
+wandb>=0.16.0                    # W&B for HPO sweep visualization (optional)
+
+# ─── Explainability ───────────────────────────────────────────────────────────
+shap>=0.44.0                     # SHAP DeepExplainer
+lime>=0.2.0.1                    # LIME signal window explanations
+
+# ─── Data Management ──────────────────────────────────────────────────────────
+h5py>=3.10.0                     # HDF5 .mat v7.3 loading
+dvc>=3.30.0                      # Data version control
+dvc-ssh>=2.20.0                  # DVC remote storage via SSH
+
+# ─── Visualization ────────────────────────────────────────────────────────────
+matplotlib>=3.8.0
+seaborn>=0.13.0
+plotly>=5.18.0                   # Interactive plots in dashboard
+
+# ─── Dashboard Backend ────────────────────────────────────────────────────────
+flask>=3.0.0
+flask-cors>=4.0.0
+
+# ─── GPU Monitoring ───────────────────────────────────────────────────────────
+pynvml>=11.5.0                   # NVML bindings — temperature, VRAM, power
+
+# ─── Utilities ────────────────────────────────────────────────────────────────
+PyYAML>=6.0.1                    # Config file loading
+tqdm>=4.66.0                     # Progress bars
+tensorboard>=2.15.0              # TensorBoard (used inside trainer, alongside MLflow)
+
+# ─── Automated Retraining ─────────────────────────────────────────────────────
+# noise2void — no PyPI package; install from GitHub if using N2V self-supervision:
+# pip install git+https://github.com/juglab/n2v.git  (TF-based, optional)
+
+# =============================================================================
+# NOTES:
+# 1. Activate the venv FIRST before installing anything:
+#    source .venv/bin/activate          # Linux/macOS
+#    .venv\Scripts\activate             # Windows
+#
+# 2. Install PyTorch with CUDA 13.0:
+#    pip install torch torchvision --index-url https://download.pytorch.org/whl/cu130
+#
+# 3. Then install the rest (most may already be installed in .venv):
+#    pip install -r requirements.txt
+#
+# 4. Verify GPU is detected:
+#    python -c "import torch; print(torch.cuda.get_device_name(0))"
+#
+# 5. DVC is optional — skip if not doing data versioning:
+#    pip install -r requirements.txt --ignore-package dvc dvc-ssh
+#
+# 6. W&B is optional — skip if not using W&B for sweep visualization:
+#    pip install -r requirements.txt --ignore-package wandb
+# =============================================================================

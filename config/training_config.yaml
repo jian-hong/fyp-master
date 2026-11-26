@@ -1,0 +1,40 @@
+# Full robust training configuration — MR-TAE-FULL-LossB / MWCNN-BiGRU
+n_train: 50000
+n_val: 5000
+phase1_epochs: 40
+phase2_epochs: 40
+phase3_epochs: 30
+lr: 3.0e-4
+weight_decay: 1.0e-4
+grad_clip: 1.0
+seed: 42
+num_workers: 0
+pin_memory: true
+persistent_workers: false
+batch_size: 128
+
+# Architecture flags for robust track (merged over model_registry when keys present)
+use_wavelet_pooling: true
+use_bigru: true
+use_swin: true
+use_attention_gates: false
+use_mtl: true
+loss_config: "B"
+
+# WGAN noise trainer (optional batch; falls back to batch_size)
+wgan_noise_batch_size: 64
+
+results_root: results
+snapshot_every: 10
+
+# Thermal schedule + GPU pause (trainer HeatMonitor + ThermalSchedule)
+thermal_break_phase1_sec: 300
+thermal_break_phase2_entry_sec: 120
+thermal_micro_break_sec: 60
+thermal_micro_break_every_n_epochs: 10
+thermal_micro_break_phase3_sec: 45
+thermal_micro_break_every_n_epochs_phase3: 5
+thermal_pause_temp: 82
+thermal_resume_temp: 68
+thermal_poll_interval_sec: 30
+thermal_pause_poll_sec: 90

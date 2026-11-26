@@ -1,0 +1,15 @@
+Model                                Epoch  Val-NCC  Phase  Path
+------------------------------------------------------------------------------------------
+  MR-TAE-FULL                           38 0.9847131550312043      1  .../checkpoints/best.pt
+  MR-TAE-noBiGRU                        91 0.9486095564705985      3  .../checkpoints/best.pt ⚠ Phase-3 ckpt (Loss A — check +5dB NCC)
+  MR-TAE-noSwin                         95 0.9488998055458069      3  .../checkpoints/best.pt ⚠ Phase-3 ckpt (Loss A — check +5dB NCC)
+  MR-TAE-noAttn                         85 0.9456379413604736      3  .../checkpoints/best.pt ⚠ Phase-3 ckpt (Loss A — check +5dB NCC)
+  MR-TAE-noMTL                          87 0.9180870822497776      3  .../checkpoints/best.pt
+  MR-TAE-noWavelet                      91 0.9473795805658612      3  .../checkpoints/best.pt ⚠ Phase-3 ckpt (Loss A — check +5dB NCC)
+  MR-TAE-noSwin-noBiGRU                 93 0.9459420272282192      3  .../checkpoints/best.pt ⚠ Phase-3 ckpt (Loss A — check +5dB NCC)
+  MR-TAE-noSwin-noAttn                  91 0.9480029259409223      3  .../checkpoints/best.pt ⚠ Phase-3 ckpt (Loss A — check +5dB NCC)
+  MR-TAE-noBiGRU-noAttn                 95 0.9487177389008659      3  .../checkpoints/best.pt ⚠ Phase-3 ckpt (Loss A — check +5dB NCC)
+  MR-TAE-FULL-LossB                     85 0.9855869248509407      3  .../checkpoints/best.pt
+  MR-TAE-FULL-LossC                     91 0.9206135954175677      3  .../checkpoints/best.pt
+  MWCNN-BiGRU                           76 0.9326313393456596      3  .../checkpoints/best.pt
+  UNet-BiGRU-Swin                       95 0.9418707575116839      3  .../checkpoints/best.pt

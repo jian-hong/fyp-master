@@ -1,0 +1,109 @@
+BOTTLENECK FORWARD PASS AUDIT (SEQUENTIAL vs PARALLEL)
+======================================================
+Source: Try Model/mr_tae_fusion/models/mr_tae_fusion.py
+       Try Model/mr_tae_fusion/models/swin_transformer.py
+       Try Model/mr_tae_fusion/config.py
+Date:   2026-05-27
+
+Default full model uses HybridBottleneck when ablation.use_bigru and
+ablation.use_swin are both True (AblationConfig defaults).
+
+-----------------------------------------------------------------------------
+Q1. BiGRU -> Swin: SEQUENTIAL (not parallel)
+-----------------------------------------------------------------------------
+
+HybridBottleneck.forward() exact flow:
+
+  residual = self.residual(x)                    # line 62
+  h = self.pre_gru(x).permute(0, 2, 1)           # line 63  Conv1d then (B,L,C)
+  h, _ = self.gru(h)                             # line 64  BiGRU
+  h = h.permute(0, 2, 1)                         # line 65  back to (B,C,L)
+  h = self.gru_to_swin(h)                        # line 66  Conv1d projection
+  h = self.swin(h)                               # line 67  Swin receives GRU output
+  return self.output_proj(h) + residual          # line 68
+
+Answer: SEQUENTIAL. BiGRU output feeds INTO Swin. There is no parallel branch
+or fusion of separate BiGRU and Swin outputs on the same encoder tensor.
+
+NOT this (parallel):
+  gru_out = self.bigru(x); swin_out = self.swin(x); cat/fuse(...)
+
+-----------------------------------------------------------------------------
+Q2. FUSION BLOCK (if parallel)
+-----------------------------------------------------------------------------
+
+N/A — bottleneck is sequential. No BiGRU‖Swin fusion block exists in
+HybridBottleneck.
+
+The only "fusion" is residual addition at the end:
+  output_proj(swin_out) + residual(x)
+
+-----------------------------------------------------------------------------
+Q3. SHIFTED WINDOWS (SW-MSA): YES (partially implemented)
+-----------------------------------------------------------------------------
+
+SwinTransformer1D alternates shift_size:
+
+  shift_size = 0 if (i % 2 == 0) else window_size // 2   # swin_transformer.py 370
+
+SwinTransformerBlock uses cyclic shift:
+
+  if self.shift_size > 0:
+      shifted_x = torch.roll(x, shifts=-self.shift_size, dims=1)   # line 286
+  ...
+  if self.shift_size > 0:
+      x = torch.roll(shifted_x, shifts=self.shift_size, dims=1)  # line 303
+
+CAVEAT: _create_mask() returns None always (line 334: "Simplified: skip complex
+masking for 1D"). Shifted-window attention runs with roll but without a proper
+attention mask for invalid shifted pairs. Architecture intent is SW-MSA; mask
+is simplified/disabled.
+
+Answer: YES — shift_size, torch.roll, and alternating blocks are present.
+Attention mask for shifted windows is NOT fully implemented.
+
+-----------------------------------------------------------------------------
+Q4. SWIN WINDOW SIZE AND NUMBER OF ATTENTION HEADS
+-----------------------------------------------------------------------------
+
+From ModelConfig (config.py) passed into HybridBottleneck / SwinTransformer1D:
+
+  swin_window_size:  32   (config.py line 105)
+  swin_num_heads:     8   (config.py line 104)
+  swin_depth:         2   (2 SwinTransformerBlocks)
+  swin_embed_dim:   256
+
+HybridBottleneck passes swin_window=config.swin_window_size,
+swin_heads=config.swin_num_heads to SwinTransformer1D.
+
+-----------------------------------------------------------------------------
+Q5. LAYER NORMALISATION BEFORE BiGRU / BEFORE Swin
+-----------------------------------------------------------------------------
+
+Before BiGRU (HybridBottleneck):
+  NO LayerNorm. Only:
+    - residual Conv1d (1x1)
+    - pre_gru Conv1d (in_channels -> gru_hidden*2)
+    - permute -> GRU
+
+Before Swin (inside SwinTransformerBlock, after gru_to_swin Conv1d):
+  YES LayerNorm — inside each block BEFORE window attention:
+    x = self.norm1(x)   # swin_transformer.py line 282
+
+SwinTransformer1D also applies final norm after all blocks:
+    x = self.norm(x)    # line 401
+
+BiGRU path: no LayerNorm on GRU input or output.
+Swin path: LayerNorm per block (norm1 pre-attn, norm2 pre-MLP) + final norm.
+
+-----------------------------------------------------------------------------
+BOTTLENECK DATA FLOW SUMMARY (L=257 after encoder for 2048 input)
+-----------------------------------------------------------------------------
+
+  encoded (1,256,257)
+    -> pre_bottleneck Conv1d -> (1,256,257)
+    -> HybridBottleneck:
+         residual branch from (1,256,257)
+         pre_gru + BiGRU + gru_to_swin + Swin1D(depth=2) + output_proj
+         + residual add
+    -> bottleneck_features (1,256,257)

@@ -1,0 +1,64 @@
+{
+  "model_id": "MR-TAE-FULL-LossB",
+  "results_root": "results",
+  "selection_criterion": "max mean NCC across SNR levels; tie-break -15 dB",
+  "candidates": [
+    {
+      "checkpoint": "checkpoint_epoch0090.pt",
+      "path": "results\\MR-TAE-FULL-LossB\\checkpoints\\checkpoint_epoch0090.pt",
+      "epoch": 90,
+      "phase": null,
+      "per_snr_ncc": {
+        "-15": 0.14364448189735413,
+        "-10": 0.25903019309043884,
+        "-5": 0.5025213360786438,
+        "0": 0.7880709171295166,
+        "5": 0.8582019209861755,
+        "10": 0.8809451460838318,
+        "15": 0.8794335126876831
+      },
+      "synthetic_ncc_mean": 0.616,
+      "synthetic_ncc_minus15db": 0.1436
+    },
+    {
+      "checkpoint": "checkpoint_epoch0100.pt",
+      "path": "results\\MR-TAE-FULL-LossB\\checkpoints\\checkpoint_epoch0100.pt",
+      "epoch": 100,
+      "phase": null,
+      "per_snr_ncc": {
+        "-15": 0.2008235603570938,
+        "-10": 0.3446287214756012,
+        "-5": 0.6125727295875549,
+        "0": 0.8683533668518066,
+        "5": 0.9306444525718689,
+        "10": 0.9616623520851135,
+        "15": 0.9797976016998291
+      },
+      "synthetic_ncc_mean": 0.6998,
+      "synthetic_ncc_minus15db": 0.2008
+    },
+    {
+      "checkpoint": "checkpoint_epoch0110.pt",
+      "path": "results\\MR-TAE-FULL-LossB\\checkpoints\\checkpoint_epoch0110.pt",
+      "epoch": 110,
+      "phase": null,
+      "per_snr_ncc": {
+        "-15": 0.18013040721416473,
+        "-10": 0.31516700983047485,
+        "-5": 0.5659087300300598,
+        "0": 0.8210945129394531,
+        "5": 0.8851064443588257,
+        "10": 0.9073958396911621,
+        "15": 0.9151902198791504
+      },
+      "synthetic_ncc_mean": 0.6557,
+      "synthetic_ncc_minus15db": 0.1801
+    }
+  ],
+  "selected_checkpoint": "checkpoint_epoch0100.pt",
+  "selected_path": "results\\MR-TAE-FULL-LossB\\checkpoints\\checkpoint_epoch0100.pt",
+  "selected_epoch": 100,
+  "selected_phase": null,
+  "selected_synthetic_ncc_mean": 0.6998,
+  "selected_synthetic_ncc_minus15db": 0.2008
+}

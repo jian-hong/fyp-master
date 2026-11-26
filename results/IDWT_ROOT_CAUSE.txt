@@ -1,0 +1,15 @@
+IDWT Root Cause Analysis
+
+- Q1 configurable flag in model_registry/config: NO. No use_idwt key found in config/model_registry.yaml or ModelConfig dataclass.
+- Q2 actual IDWT code in decoder: YES. MWCNNDecoderBlock implements self.idwt path, but MWCNNDecoder constructor does not expose/pass use_idwt, so blocks default to interpolation path.
+- Q3 when set to False: In current code, MWCNNDecoderBlock defaults use_idwt=False and MWCNNDecoder never overrides it. No git history for mwcnn.py path was retrievable in this repo snapshot, so exact commit cannot be determined.
+- Q4 behavior when use_idwt=True: Direct construction MWCNNDecoder(use_idwt=True) fails because MWCNNDecoder has no such argument. IDWT can only be activated by constructing decoder blocks manually or refactoring constructor.
+
+Shape diagnostics from tests:
+
+Conclusion:
+- IDWT is effectively disabled in production path due to API wiring gap (not exposed) plus a shape mismatch (+2 samples in db4 roundtrip: 2048 -> 1025 -> 2050).
+- Fix requires decoder API plumbing (use_idwt propagated to blocks) and deterministic crop/pad at each upsample stage to exactly match skip/output lengths.
+TODO:
+IDWT requires retraining from scratch. Reason: current model API does not expose use_idwt at decoder level, and db4 IDWT roundtrip returns length mismatch (2048->2050), so inference toggle is not plug-and-play with existing checkpoint.
+Recommended action: retrain MR-TAE-FULL with use_idwt=True (after decoder wiring + crop/pad fix) using existing curriculum and compare for paper.

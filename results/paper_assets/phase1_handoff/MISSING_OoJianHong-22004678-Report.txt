@@ -1,0 +1,5 @@
+Expected FYP report PDF at:
+  D:\New folder (2)\Data\FYP_MASTER\OoJianHong-22004678-Report.pdf
+
+Add the file there and re-run:
+  python scripts/sync_phase1_handoff_assets.py

@@ -1,0 +1,14 @@
+IMPROVED MODEL EVALUATION RESULTS
+==================================================
+
+SEGMENTATION ACCURACY:
+  Background  :  96.82%
+  Corona      :  93.98%
+  Surface     :  14.85%
+  Internal    :  18.93%
+  OVERALL     :  81.99%
+
+DENOISING QUALITY:
+  SNR Improvement: 16.18 dB
+  NCC (Shape):     0.5145
+  RMSE:            0.105286

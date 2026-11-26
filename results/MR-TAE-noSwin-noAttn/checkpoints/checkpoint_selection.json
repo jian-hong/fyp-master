@@ -1,0 +1,39 @@
+{
+  "model_id": "MR-TAE-noSwin-noAttn",
+  "results_root": "results",
+  "candidates": [
+    {
+      "checkpoint": "best_phase3.pt",
+      "path": "results\\MR-TAE-noSwin-noAttn\\checkpoints\\best_phase3.pt",
+      "epoch": 100,
+      "synthetic_ncc_minus15db": 0.0108
+    },
+    {
+      "checkpoint": "checkpoint_epoch0090.pt",
+      "path": "results\\MR-TAE-noSwin-noAttn\\checkpoints\\checkpoint_epoch0090.pt",
+      "epoch": 90,
+      "synthetic_ncc_minus15db": 0.0419
+    },
+    {
+      "checkpoint": "checkpoint_epoch0100.pt",
+      "path": "results\\MR-TAE-noSwin-noAttn\\checkpoints\\checkpoint_epoch0100.pt",
+      "epoch": 100,
+      "synthetic_ncc_minus15db": 0.0108
+    },
+    {
+      "checkpoint": "checkpoint_epoch0110.pt",
+      "path": "results\\MR-TAE-noSwin-noAttn\\checkpoints\\checkpoint_epoch0110.pt",
+      "epoch": 110,
+      "synthetic_ncc_minus15db": 0.0097
+    },
+    {
+      "checkpoint": "last.pt",
+      "path": "results\\MR-TAE-noSwin-noAttn\\checkpoints\\last.pt",
+      "epoch": 110,
+      "synthetic_ncc_minus15db": 0.0097
+    }
+  ],
+  "selected_checkpoint": "checkpoint_epoch0090.pt",
+  "selected_path": "results\\MR-TAE-noSwin-noAttn\\checkpoints\\checkpoint_epoch0090.pt",
+  "selected_synthetic_ncc_minus15db": 0.0419
+}

@@ -1,0 +1,303 @@
+# config/campaign_15day.yaml
+# 15-Day Autonomous Training Campaign — MR-TAE FYP
+# This file is READ by autonomous_loop.py. Edit thresholds here to tune behaviour.
+# DO NOT change phase IDs once the campaign has started (breaks state resume).
+
+campaign:
+  version: "15day_v2"
+  total_days: 15
+  timezone: "Asia/Kuala_Lumpur"
+
+  # Telegram notification (set env vars TELEGRAM_BOT_TOKEN + TELEGRAM_CHAT_ID)
+  notifications:
+    enabled: true
+    on_phase_start: true
+    on_phase_complete: true
+    on_phase_failure: true
+    on_daily_digest: true
+    on_metric_threshold: true
+
+  # Evaluation runs after every phase AND every 6 hours during a phase
+  eval_interval_hours: 6
+
+  # Digest generated at these UTC+8 times and at every phase boundary
+  digest_times_local: ["07:00", "19:00"]
+
+# ─── PHASE A: Complete Supervised Training ────────────────────────────────────
+phases:
+  - id: phase_A_train
+    name: "Complete All 13 Models (Supervised Training)"
+    max_hours: 96          # 4 days hard ceiling
+    priority: 1
+
+    subprocess:
+      script: "pipeline/mlflow_orchestrator.py"
+      args: ["--resume"]
+      timeout_hours: 96
+
+    success_criteria:
+      models_complete_count: 13              # All 13 in registry
+      best_real_ncc_min: 0.75               # Phase A minimum
+      neural_vs_savgol_snr_minus5_delta: 0.0  # neural MUST beat baseline at -5 dB
+      models_with_real_ncc_above_0_5: 8     # At least 8 models over 0.5
+
+    on_failure:
+      action: extend_phase3_epochs          # patches training_config.yaml
+      extend_by_epochs: 20
+      max_retries: 2
+
+    eval_after: true
+    generate_figures_after: true
+    digest_after: true
+
+# ─── PHASE B: Extended HPO ────────────────────────────────────────────────────
+  - id: phase_B_hpo
+    name: "Extended HPO (50 trials, focus low-SNR)"
+    max_hours: 48
+    priority: 2
+    depends_on: phase_A_train
+
+    subprocess:
+      script: "hpo/optuna_study.py"
+      args: ["--n-trials", "50", "--study-name", "ae-pd-hpo-extended",
+             "--objective", "test_real_ncc", "--phase3-weight", "2.0"]
+      timeout_hours: 48
+
+    # After HPO, retrain best config
+    post_subprocess:
+      script: "pipeline/mlflow_orchestrator.py"
+      args: ["--model", "MR-TAE-FULL-LossB", "--hparams", "config/best_hparams.yaml",
+             "--run-name", "MR-TAE-FULL-HPO-EXT"]
+
+    success_criteria:
+      ncc_improvement_over_phase_a: 0.005   # any improvement counts
+      retrain_complete: true
+
+    on_failure:
+      action: skip_and_use_phase_a_best
+      note: "Keep Phase A best checkpoint, log the failure"
+
+    eval_after: true
+    generate_figures_after: true
+    digest_after: true
+
+# ─── PHASE C: Noise2Void Fine-tuning ─────────────────────────────────────────
+  - id: phase_C_n2v
+    name: "Noise2Void Self-Supervised Fine-tuning on Q.Lin"
+    max_hours: 48
+    priority: 3
+    depends_on: phase_B_hpo
+
+    subprocess:
+      script: "pipeline/n2v_finetune.py"
+      args: ["--checkpoint", "auto",   # auto = best from phase B
+             "--n-epochs", "50",
+             "--replay-fraction", "0.20",
+             "--real-data", "data/test_real_qlin.pt",  # read-only inference use
+             "--out-dir", "results/MR-TAE-N2V"]
+      timeout_hours: 48
+
+    success_criteria:
+      real_ncc_improvement: 0.005
+      synth_ncc_regression_max: 0.03    # replay buffer must protect synthetic
+
+    on_failure:
+      action: skip
+      note: "N2V is enhancement only — not a blocker"
+
+    eval_after: true
+    generate_figures_after: false     # no new model figure needed, just metrics
+    digest_after: true
+
+# ─── PHASE D: WGAN-GP Noise Training ─────────────────────────────────────────
+  - id: phase_D_wgan
+    name: "WGAN-GP Noise Distribution Training"
+    max_hours: 48
+    priority: 4
+    depends_on: phase_C_n2v
+
+    subprocess:
+      script: "wgan_augmentation/wgan_noise_trainer.py"
+      args: ["--real-data", "data/test_real_qlin.pt",
+             "--out-model", "wgan_augmentation/noise_generator.pth",
+             "--out-samples", "wgan_augmentation/wgan_samples.pt",
+             "--epochs", "500",
+             "--batch", "64",
+             "--gp-weight", "10",
+             "--n-critic", "5",
+             "--mmd-stop-patience", "50"]
+      timeout_hours: 48
+
+    success_criteria:
+      wgan_mmd_vs_real: 0.1    # generated noise MMD < 0.1
+      samples_generated: 5000  # minimum sample count
+
+    on_failure:
+      action: skip
+      note: "WGAN augmentation is enhancement only — skip if training fails"
+
+    eval_after: false
+    digest_after: true
+
+# ─── PHASE E: WGAN-Augmented Retraining ───────────────────────────────────────
+  - id: phase_E_wgan_retrain
+    name: "Retrain Best Model with WGAN Noise Augmentation"
+    max_hours: 48
+    priority: 5
+    depends_on: phase_D_wgan
+    skip_if_phase_failed: phase_D_wgan
+
+    subprocess:
+      script: "pipeline/mlflow_orchestrator.py"
+      args: ["--model", "MR-TAE-FULL-LossB",
+             "--hparams", "config/best_hparams.yaml",
+             "--wgan-aug", "0.5",
+             "--run-name", "MR-TAE-FULL-WGAN"]
+      timeout_hours: 48
+
+    success_criteria:
+      real_ncc_improvement_over_phase_b: 0.005
+      synth_ncc_regression_max: 0.03
+
+    on_failure:
+      action: skip_and_use_phase_b_best
+
+    eval_after: true
+    generate_figures_after: true
+    digest_after: true
+
+# ─── PHASE F: Knowledge Distillation ─────────────────────────────────────────
+  - id: phase_F_distill
+    name: "Knowledge Distillation → EdgePD-Net (PD-CLIP)"
+    max_hours: 24
+    priority: 6
+    depends_on: phase_E_wgan_retrain
+
+    subprocess:
+      script: "pipeline/distill.py"
+      args: ["--teacher", "auto",   # best model from phases A-E
+             "--student", "MWCNN-BiGRU",
+             "--epochs", "60",
+             "--alpha", "0.5",
+             "--beta", "0.3",
+             "--gamma", "0.2",
+             "--out-dir", "results/EdgePD-Net",
+             "--export-onnx", "results/EdgePD-Net/edgepd.onnx",
+             "--int8-calib-windows", "200"]
+      timeout_hours: 24
+
+    success_criteria:
+      student_real_ncc_min: 0.70
+      student_latency_ms_max: 8.0
+      onnx_export_success: true
+
+    on_failure:
+      action: skip
+      note: "Edge deployment is PD-CLIP commercial track — not thesis blocker"
+
+    eval_after: true
+    digest_after: true
+
+# ─── PHASE G: Final Report ────────────────────────────────────────────────────
+  - id: phase_G_report
+    name: "Final Benchmarking + Thesis Figure Generation"
+    max_hours: 48
+    priority: 7
+    depends_on: phase_F_distill
+
+    subprocess:
+      script: "evaluation/generate_thesis_report.py"
+      args: ["--output-dir", "results/figures",
+             "--tables-dir", "results",
+             "--dpi", "300",
+             "--include-edge"]
+      timeout_hours: 12
+
+    # Also run the general figure generator
+    post_subprocess:
+      script: "evaluation/generate_method_comparison_figures.py"
+      args: ["--snr-levels", "-15", "-5", "0", "5"]
+
+    success_criteria:
+      figures_generated: 10
+      csv_tables_generated: 3
+      final_report_exists: true
+
+    on_failure:
+      action: retry_once
+
+    eval_after: true
+    generate_figures_after: false   # generate_thesis_report IS the figure gen
+    digest_after: true
+
+# ─── FIGURE REQUIREMENTS ─────────────────────────────────────────────────────
+figures:
+  required:
+    - id: fig_01
+      path: "results/figures/fig_01_method_comparison_grid.png"
+      description: "4-panel per-model overlay at SNR -15, -5, +5 dB"
+      dpi: 300
+
+    - id: fig_02
+      path: "results/figures/fig_02_ncc_vs_snr_all_models.png"
+      description: "NCC vs SNR line chart, all 13 models"
+      dpi: 300
+
+    - id: fig_03
+      path: "results/figures/fig_03_ablation_heatmap.png"
+      description: "NCC heatmap: rows=models, cols=SNR levels"
+      dpi: 300
+
+    - id: fig_04
+      path: "results/figures/fig_04_training_curves.png"
+      description: "NCC/RMSE vs epoch for all models"
+      dpi: 300
+
+    - id: fig_05
+      path: "results/figures/fig_05_efficiency_scatter.png"
+      description: "Latency vs NCC scatter, bubble=param count"
+      dpi: 300
+
+    - id: fig_06
+      path: "results/figures/fig_06_shap_overlay.png"
+      description: "SHAP attribution on 3 representative windows"
+      dpi: 300
+
+    - id: fig_07
+      path: "results/figures/fig_07_real_vs_synth.png"
+      description: "Real Q.Lin vs synthetic denoising comparison"
+      dpi: 300
+
+    - id: fig_08
+      path: "results/figures/fig_08_psd_comparison.png"
+      description: "PSD overlay: noisy/clean/denoised all models"
+      dpi: 300
+
+    - id: fig_09
+      path: "results/figures/fig_09_vs_baselines.png"
+      description: "Best neural vs savgol/wavelet/bayesshrink at all SNRs"
+      dpi: 300
+
+    - id: fig_10
+      path: "results/figures/fig_10_edgepd_vs_teacher.png"
+      description: "EdgePD-Net vs teacher: signal overlay + latency"
+      dpi: 300
+
+# ─── METRIC THRESHOLDS FOR DASHBOARD ─────────────────────────────────────────
+thresholds:
+  red_alert_real_ncc_below: 0.50     # orange warning on dashboard
+  green_real_ncc_above: 0.80         # green on dashboard
+  traditional_baseline_ncc_at_minus5: 0.819   # savgol reference — must beat this
+  traditional_baseline_ncc_at_minus15: 0.265  # savgol reference
+  max_synth_regression_acceptable: 0.05
+
+# ─── PATHS ───────────────────────────────────────────────────────────────────
+paths:
+  test_synthetic: "data/test_synthetic_ae.pt"
+  test_real: "data/test_real_qlin.pt"
+  campaign_state: "campaign_state.json"
+  logs_dir: "logs"
+  figures_dir: "results/figures"
+  digests_dir: "logs/digests"
+  venv_python_win: ".venv/Scripts/python.exe"
+  venv_python_posix: ".venv/bin/python"

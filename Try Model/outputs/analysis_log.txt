@@ -1,0 +1,48 @@
+============================================================
+Comprehensive Segmentation & Denoising Analysis
+============================================================
+Device: cuda
+
+Evaluating SOTA...
+
+Evaluating:   0%|          | 0/32 [00:00<?, ?it/s]
+Evaluating:   3%|3         | 1/32 [00:00<00:24,  1.29it/s]
+Evaluating:  12%|#2        | 4/32 [00:00<00:04,  5.67it/s]
+Evaluating:  22%|##1       | 7/32 [00:00<00:02, 10.02it/s]
+Evaluating:  31%|###1      | 10/32 [00:01<00:01, 14.10it/s]
+Evaluating:  41%|####      | 13/32 [00:01<00:01, 17.55it/s]
+Evaluating:  50%|#####     | 16/32 [00:01<00:00, 20.56it/s]
+Evaluating:  62%|######2   | 20/32 [00:01<00:00, 23.64it/s]
+Evaluating:  72%|#######1  | 23/32 [00:01<00:00, 25.14it/s]
+Evaluating:  81%|########1 | 26/32 [00:01<00:00, 26.28it/s]
+Evaluating:  94%|#########3| 30/32 [00:01<00:00, 27.43it/s]
+Evaluating: 100%|##########| 32/32 [00:02<00:00, 14.32it/s]
+
+======================================================================
+                 SOTA EVALUATION RESULTS
+======================================================================
+
+--- DATA QUALITY ---
+Total samples: 500
+NaN outputs: 0 (0.00%)
+Spike outputs: 500 (100.00%)
+
+--- SEGMENTATION PERFORMANCE ---
+Overall Accuracy: 47.91%
+
+Per-Class IoU:
+  Background  : IoU= 30.2% | Dice= 31.6%
+  Corona      : IoU= 91.6% | Dice= 92.0%
+  Surface     : IoU= 85.5% | Dice= 86.4%
+  Internal    : IoU= 38.1% | Dice= 45.1%
+
+--- DENOISING PERFORMANCE ---
+SNR Improvement: 13.96 dB
+NCC: 0.3532
+RMSE: 0.133754
+======================================================================
+Saved: outputs\extended_training\confusion_matrix.png
+Saved: outputs\extended_training\segmentation_analysis.png
+Saved: outputs\extended_training\signal_generation_verification.png
+
+All results saved to: outputs\extended_training

@@ -1,0 +1,163 @@
+{
+  "results__MR-TAE-FULL": {
+    "best.pt": "FAILED: Error(s) in loading state_dict for MRTAEFusion:\n\tMissing key(s) in state_dict: \"attention_gates.0.residual_weight\", \"attention_gates.0.attention_gate.W_gate.weight\", \"attention_gates.0.attention_gate.W_gate.bias\", \"attention_gates.0.attention_gate.W_skip.weight\", \"attention_gates.0.attention_gate.psi.weight\", \"attention_gates.0.attention_gate.psi.bias\", \"attention_gates.0.attention_gate.bn.weight\", \"attention_gates.0.attention_gate.bn.bias\", \"attention_gates.0.attention_gate.bn.running_mean\", \"attention_gates.0.attention_gate.bn.running_var\", \"attention_gates.1.residual_weight\", \"attention_gates.1.attention_gate.W_gate.weight\", \"attention_gates.1.attention_gate.W_gate.bias\", \"attention_gates.1.attention_gate.W_skip.weight\", \"attention_gates.1.attention_gate.psi.weight\", \"attention_gates.1.attention_gate.psi.bias\", \"attention_gates.1.attention_gate.bn.weight\", \"attention_gates.1.attention_gate.bn.bias\", \"attention_gates.1.attention_gate.bn.running_mean\", \"attention_gates.1.attention_gate.bn.running_var\", \"attention_gates.2.residual_weight\", \"attention_gates.2.attention_gate.W_gate.weight\", \"attention_gates.2.attention_gate.W_gate.bias\", \"attention_gates.2.attention_gate.W_skip.weight\", \"attention_gates.2.attention_gate.psi.weight\", \"attention_gates.2.attention_gate.psi.bias\", \"attention_gates.2.attention_gate.bn.weight\", \"attention_gates.2.attention_gate.bn.bias\", \"attention_gates.2.attention_gate.bn.running_mean\", \"attention_gates.2.attention_gate.bn.running_var\". ",
+    "ep100": "FAILED: Error(s) in loading state_dict for MRTAEFusion:\n\tMissing key(s) in state_dict: \"attention_gates.0.residual_weight\", \"attention_gates.0.attention_gate.W_gate.weight\", \"attention_gates.0.attention_gate.W_gate.bias\", \"attention_gates.0.attention_gate.W_skip.weight\", \"attention_gates.0.attention_gate.psi.weight\", \"attention_gates.0.attention_gate.psi.bias\", \"attention_gates.0.attention_gate.bn.weight\", \"attention_gates.0.attention_gate.bn.bias\", \"attention_gates.0.attention_gate.bn.running_mean\", \"attention_gates.0.attention_gate.bn.running_var\", \"attention_gates.1.residual_weight\", \"attention_gates.1.attention_gate.W_gate.weight\", \"attention_gates.1.attention_gate.W_gate.bias\", \"attention_gates.1.attention_gate.W_skip.weight\", \"attention_gates.1.attention_gate.psi.weight\", \"attention_gates.1.attention_gate.psi.bias\", \"attention_gates.1.attention_gate.bn.weight\", \"attention_gates.1.attention_gate.bn.bias\", \"attention_gates.1.attention_gate.bn.running_mean\", \"attention_gates.1.attention_gate.bn.running_var\", \"attention_gates.2.residual_weight\", \"attention_gates.2.attention_gate.W_gate.weight\", \"attention_gates.2.attention_gate.W_gate.bias\", \"attention_gates.2.attention_gate.W_skip.weight\", \"attention_gates.2.attention_gate.psi.weight\", \"attention_gates.2.attention_gate.psi.bias\", \"attention_gates.2.attention_gate.bn.weight\", \"attention_gates.2.attention_gate.bn.bias\", \"attention_gates.2.attention_gate.bn.running_mean\", \"attention_gates.2.attention_gate.bn.running_var\". ",
+    "ep110": "FAILED: Error(s) in loading state_dict for MRTAEFusion:\n\tMissing key(s) in state_dict: \"attention_gates.0.residual_weight\", \"attention_gates.0.attention_gate.W_gate.weight\", \"attention_gates.0.attention_gate.W_gate.bias\", \"attention_gates.0.attention_gate.W_skip.weight\", \"attention_gates.0.attention_gate.psi.weight\", \"attention_gates.0.attention_gate.psi.bias\", \"attention_gates.0.attention_gate.bn.weight\", \"attention_gates.0.attention_gate.bn.bias\", \"attention_gates.0.attention_gate.bn.running_mean\", \"attention_gates.0.attention_gate.bn.running_var\", \"attention_gates.1.residual_weight\", \"attention_gates.1.attention_gate.W_gate.weight\", \"attention_gates.1.attention_gate.W_gate.bias\", \"attention_gates.1.attention_gate.W_skip.weight\", \"attention_gates.1.attention_gate.psi.weight\", \"attention_gates.1.attention_gate.psi.bias\", \"attention_gates.1.attention_gate.bn.weight\", \"attention_gates.1.attention_gate.bn.bias\", \"attention_gates.1.attention_gate.bn.running_mean\", \"attention_gates.1.attention_gate.bn.running_var\", \"attention_gates.2.residual_weight\", \"attention_gates.2.attention_gate.W_gate.weight\", \"attention_gates.2.attention_gate.W_gate.bias\", \"attention_gates.2.attention_gate.W_skip.weight\", \"attention_gates.2.attention_gate.psi.weight\", \"attention_gates.2.attention_gate.psi.bias\", \"attention_gates.2.attention_gate.bn.weight\", \"attention_gates.2.attention_gate.bn.bias\", \"attention_gates.2.attention_gate.bn.running_mean\", \"attention_gates.2.attention_gate.bn.running_var\". ",
+    "ep90": "FAILED: Error(s) in loading state_dict for MRTAEFusion:\n\tMissing key(s) in state_dict: \"attention_gates.0.residual_weight\", \"attention_gates.0.attention_gate.W_gate.weight\", \"attention_gates.0.attention_gate.W_gate.bias\", \"attention_gates.0.attention_gate.W_skip.weight\", \"attention_gates.0.attention_gate.psi.weight\", \"attention_gates.0.attention_gate.psi.bias\", \"attention_gates.0.attention_gate.bn.weight\", \"attention_gates.0.attention_gate.bn.bias\", \"attention_gates.0.attention_gate.bn.running_mean\", \"attention_gates.0.attention_gate.bn.running_var\", \"attention_gates.1.residual_weight\", \"attention_gates.1.attention_gate.W_gate.weight\", \"attention_gates.1.attention_gate.W_gate.bias\", \"attention_gates.1.attention_gate.W_skip.weight\", \"attention_gates.1.attention_gate.psi.weight\", \"attention_gates.1.attention_gate.psi.bias\", \"attention_gates.1.attention_gate.bn.weight\", \"attention_gates.1.attention_gate.bn.bias\", \"attention_gates.1.attention_gate.bn.running_mean\", \"attention_gates.1.attention_gate.bn.running_var\", \"attention_gates.2.residual_weight\", \"attention_gates.2.attention_gate.W_gate.weight\", \"attention_gates.2.attention_gate.W_gate.bias\", \"attention_gates.2.attention_gate.W_skip.weight\", \"attention_gates.2.attention_gate.psi.weight\", \"attention_gates.2.attention_gate.psi.bias\", \"attention_gates.2.attention_gate.bn.weight\", \"attention_gates.2.attention_gate.bn.bias\", \"attention_gates.2.attention_gate.bn.running_mean\", \"attention_gates.2.attention_gate.bn.running_var\". "
+  },
+  "results_idwt_nophase__MR-TAE-FULL-IDWT": {
+    "best.pt": {
+      "ncc_minus15dB": 0.3725,
+      "epoch": 98,
+      "path": "results_idwt_nophase\\MR-TAE-FULL-IDWT\\checkpoints\\best.pt"
+    },
+    "ep100": {
+      "ncc_minus15dB": 0.3724,
+      "epoch": 99,
+      "path": "results_idwt_nophase\\MR-TAE-FULL-IDWT\\checkpoints\\checkpoint_epoch0100.pt"
+    },
+    "ep110": {
+      "ncc_minus15dB": 0.3726,
+      "epoch": 109,
+      "path": "results_idwt_nophase\\MR-TAE-FULL-IDWT\\checkpoints\\checkpoint_epoch0110.pt"
+    },
+    "ep90": {
+      "ncc_minus15dB": 0.3708,
+      "epoch": 89,
+      "path": "results_idwt_nophase\\MR-TAE-FULL-IDWT\\checkpoints\\checkpoint_epoch0090.pt"
+    },
+    "last.pt": {
+      "ncc_minus15dB": 0.3726,
+      "epoch": 109,
+      "path": "results_idwt_nophase\\MR-TAE-FULL-IDWT\\checkpoints\\last.pt"
+    },
+    "selected_final.pt": {
+      "ncc_minus15dB": 0.3726,
+      "epoch": 109,
+      "path": "results_idwt_nophase\\MR-TAE-FULL-IDWT\\checkpoints\\selected_final.pt"
+    },
+    "SELECTED_BEST": "ep110"
+  },
+  "results_idwt_phased__MR-TAE-FULL-IDWT": {
+    "best.pt": {
+      "ncc_minus15dB": 0.1081,
+      "epoch": 39,
+      "path": "results_idwt_phased\\MR-TAE-FULL-IDWT\\checkpoints\\best.pt"
+    },
+    "best_phase3.pt": {
+      "ncc_minus15dB": 0.3527,
+      "epoch": 109,
+      "path": "results_idwt_phased\\MR-TAE-FULL-IDWT\\checkpoints\\best_phase3.pt"
+    },
+    "ep100": {
+      "ncc_minus15dB": 0.3518,
+      "epoch": 99,
+      "path": "results_idwt_phased\\MR-TAE-FULL-IDWT\\checkpoints\\checkpoint_epoch0100.pt"
+    },
+    "ep110": {
+      "ncc_minus15dB": 0.3527,
+      "epoch": 109,
+      "path": "results_idwt_phased\\MR-TAE-FULL-IDWT\\checkpoints\\checkpoint_epoch0110.pt"
+    },
+    "ep90": {
+      "ncc_minus15dB": 0.3485,
+      "epoch": 89,
+      "path": "results_idwt_phased\\MR-TAE-FULL-IDWT\\checkpoints\\checkpoint_epoch0090.pt"
+    },
+    "last.pt": {
+      "ncc_minus15dB": 0.3527,
+      "epoch": 109,
+      "path": "results_idwt_phased\\MR-TAE-FULL-IDWT\\checkpoints\\last.pt"
+    },
+    "selected_final.pt": {
+      "ncc_minus15dB": 0.3527,
+      "epoch": 109,
+      "path": "results_idwt_phased\\MR-TAE-FULL-IDWT\\checkpoints\\selected_final.pt"
+    },
+    "SELECTED_BEST": "best_phase3.pt"
+  },
+  "results_full_lossb_idwt_phased__MR-TAE-FULL-LossB-IDWT": {
+    "best.pt": {
+      "ncc_minus15dB": 0.2004,
+      "epoch": 39,
+      "path": "results_full_lossb_idwt_phased\\MR-TAE-FULL-LossB-IDWT\\checkpoints\\best.pt"
+    },
+    "best_phase3.pt": {
+      "ncc_minus15dB": 0.3378,
+      "epoch": 102,
+      "path": "results_full_lossb_idwt_phased\\MR-TAE-FULL-LossB-IDWT\\checkpoints\\best_phase3.pt"
+    },
+    "ep100": {
+      "ncc_minus15dB": 0.3368,
+      "epoch": 99,
+      "path": "results_full_lossb_idwt_phased\\MR-TAE-FULL-LossB-IDWT\\checkpoints\\checkpoint_epoch0100.pt"
+    },
+    "ep110": {
+      "ncc_minus15dB": 0.3374,
+      "epoch": 109,
+      "path": "results_full_lossb_idwt_phased\\MR-TAE-FULL-LossB-IDWT\\checkpoints\\checkpoint_epoch0110.pt"
+    },
+    "ep90": {
+      "ncc_minus15dB": 0.3325,
+      "epoch": 89,
+      "path": "results_full_lossb_idwt_phased\\MR-TAE-FULL-LossB-IDWT\\checkpoints\\checkpoint_epoch0090.pt"
+    },
+    "last.pt": {
+      "ncc_minus15dB": 0.3374,
+      "epoch": 109,
+      "path": "results_full_lossb_idwt_phased\\MR-TAE-FULL-LossB-IDWT\\checkpoints\\last.pt"
+    },
+    "selected_final.pt": {
+      "ncc_minus15dB": 0.3378,
+      "epoch": 102,
+      "path": "results_full_lossb_idwt_phased\\MR-TAE-FULL-LossB-IDWT\\checkpoints\\selected_final.pt"
+    },
+    "SELECTED_BEST": "best_phase3.pt"
+  },
+  "results_full_linear_phased__MR-TAE-FULL": {
+    "best.pt": {
+      "ncc_minus15dB": 0.1913,
+      "epoch": 39,
+      "path": "results_full_linear_phased\\MR-TAE-FULL\\checkpoints\\best.pt"
+    },
+    "best_phase3.pt": {
+      "ncc_minus15dB": 0.3511,
+      "epoch": 99,
+      "path": "results_full_linear_phased\\MR-TAE-FULL\\checkpoints\\best_phase3.pt"
+    },
+    "ep100": {
+      "ncc_minus15dB": 0.3511,
+      "epoch": 99,
+      "path": "results_full_linear_phased\\MR-TAE-FULL\\checkpoints\\checkpoint_epoch0100.pt"
+    },
+    "ep110": {
+      "ncc_minus15dB": 0.3516,
+      "epoch": 109,
+      "path": "results_full_linear_phased\\MR-TAE-FULL\\checkpoints\\checkpoint_epoch0110.pt"
+    },
+    "ep90": {
+      "ncc_minus15dB": 0.3459,
+      "epoch": 89,
+      "path": "results_full_linear_phased\\MR-TAE-FULL\\checkpoints\\checkpoint_epoch0090.pt"
+    },
+    "last.pt": {
+      "ncc_minus15dB": 0.3516,
+      "epoch": 109,
+      "path": "results_full_linear_phased\\MR-TAE-FULL\\checkpoints\\last.pt"
+    },
+    "selected_final.pt": {
+      "ncc_minus15dB": 0.3516,
+      "epoch": 109,
+      "path": "results_full_linear_phased\\MR-TAE-FULL\\checkpoints\\selected_final.pt"
+    },
+    "SELECTED_BEST": "ep110"
+  },
+  "results_full_lossb_linear_phased__MR-TAE-FULL-LossB": {
+    "best.pt": {
+      "ncc_minus15dB": 0.187,
+      "epoch": 39,
+      "path": "results_full_lossb_linear_phased\\MR-TAE-FULL-LossB\\checkpoints\\best.pt"
+    },
+    "SELECTED_BEST": "best.pt"
+  }
+}

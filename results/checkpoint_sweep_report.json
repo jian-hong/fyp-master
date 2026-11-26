@@ -1,0 +1,800 @@
+{
+  "results_root": "results",
+  "models": {
+    "MR-TAE-FULL": {
+      "model_id": "MR-TAE-FULL",
+      "results_root": "results",
+      "selection_criterion": "max mean NCC across SNR levels; tie-break -15 dB",
+      "candidates": [
+        {
+          "checkpoint": "checkpoint_epoch0090.pt",
+          "path": "results\\MR-TAE-FULL\\checkpoints\\checkpoint_epoch0090.pt",
+          "epoch": 90,
+          "phase": null,
+          "per_snr_ncc": {
+            "-15": 0.3637653589248657,
+            "-10": 0.6568576693534851,
+            "-5": 0.8370043039321899,
+            "0": 0.9125945568084717,
+            "5": 0.9416517615318298,
+            "10": 0.9486629962921143,
+            "15": 0.9516661167144775
+          },
+          "synthetic_ncc_mean": 0.8017,
+          "synthetic_ncc_minus15db": 0.3638
+        },
+        {
+          "checkpoint": "checkpoint_epoch0100.pt",
+          "path": "results\\MR-TAE-FULL\\checkpoints\\checkpoint_epoch0100.pt",
+          "epoch": 100,
+          "phase": null,
+          "per_snr_ncc": {
+            "-15": 0.3685287833213806,
+            "-10": 0.6600667834281921,
+            "-5": 0.8388480544090271,
+            "0": 0.9114801287651062,
+            "5": 0.9344526529312134,
+            "10": 0.9435545206069946,
+            "15": 0.9477695226669312
+          },
+          "synthetic_ncc_mean": 0.8007,
+          "synthetic_ncc_minus15db": 0.3685
+        },
+        {
+          "checkpoint": "checkpoint_epoch0110.pt",
+          "path": "results\\MR-TAE-FULL\\checkpoints\\checkpoint_epoch0110.pt",
+          "epoch": 110,
+          "phase": null,
+          "per_snr_ncc": {
+            "-15": 0.3675172030925751,
+            "-10": 0.6604726910591125,
+            "-5": 0.839087724685669,
+            "0": 0.91141676902771,
+            "5": 0.936560869216919,
+            "10": 0.9440388679504395,
+            "15": 0.9479072093963623
+          },
+          "synthetic_ncc_mean": 0.801,
+          "synthetic_ncc_minus15db": 0.3675
+        }
+      ],
+      "selected_checkpoint": "checkpoint_epoch0090.pt",
+      "selected_path": "results\\MR-TAE-FULL\\checkpoints\\checkpoint_epoch0090.pt",
+      "selected_epoch": 90,
+      "selected_phase": null,
+      "selected_synthetic_ncc_mean": 0.8017,
+      "selected_synthetic_ncc_minus15db": 0.3638,
+      "skipped": true
+    },
+    "MR-TAE-noBiGRU": {
+      "model_id": "MR-TAE-noBiGRU",
+      "results_root": "results",
+      "selection_criterion": "max mean NCC across SNR levels; tie-break -15 dB",
+      "candidates": [
+        {
+          "checkpoint": "checkpoint_epoch0090.pt",
+          "path": "results\\MR-TAE-noBiGRU\\checkpoints\\checkpoint_epoch0090.pt",
+          "epoch": 90,
+          "phase": null,
+          "per_snr_ncc": {
+            "-15": 0.05735607072710991,
+            "-10": 0.17506170272827148,
+            "-5": 0.5475988388061523,
+            "0": 0.8519700169563293,
+            "5": 0.9474338293075562,
+            "10": 0.9761019945144653,
+            "15": 0.9851704239845276
+          },
+          "synthetic_ncc_mean": 0.6487,
+          "synthetic_ncc_minus15db": 0.0574
+        },
+        {
+          "checkpoint": "checkpoint_epoch0100.pt",
+          "path": "results\\MR-TAE-noBiGRU\\checkpoints\\checkpoint_epoch0100.pt",
+          "epoch": 100,
+          "phase": null,
+          "per_snr_ncc": {
+            "-15": 0.06344220787286758,
+            "-10": 0.2000032216310501,
+            "-5": 0.5741312503814697,
+            "0": 0.8575900793075562,
+            "5": 0.9485459923744202,
+            "10": 0.976624608039856,
+            "15": 0.9855241179466248
+          },
+          "synthetic_ncc_mean": 0.658,
+          "synthetic_ncc_minus15db": 0.0634
+        },
+        {
+          "checkpoint": "checkpoint_epoch0080.pt",
+          "path": "results\\MR-TAE-noBiGRU\\checkpoints\\checkpoint_epoch0080.pt",
+          "epoch": 80,
+          "phase": null,
+          "per_snr_ncc": {
+            "-15": 0.050661154091358185,
+            "-10": 0.18024438619613647,
+            "-5": 0.5678315758705139,
+            "0": 0.8558405041694641,
+            "5": 0.9473472237586975,
+            "10": 0.975434422492981,
+            "15": 0.9849803447723389
+          },
+          "synthetic_ncc_mean": 0.6518,
+          "synthetic_ncc_minus15db": 0.0507
+        }
+      ],
+      "selected_checkpoint": "checkpoint_epoch0100.pt",
+      "selected_path": "results\\MR-TAE-noBiGRU\\checkpoints\\checkpoint_epoch0100.pt",
+      "selected_epoch": 100,
+      "selected_phase": null,
+      "selected_synthetic_ncc_mean": 0.658,
+      "selected_synthetic_ncc_minus15db": 0.0634,
+      "skipped": true
+    },
+    "MR-TAE-noSwin": {
+      "model_id": "MR-TAE-noSwin",
+      "results_root": "results",
+      "selection_criterion": "max mean NCC across SNR levels; tie-break -15 dB",
+      "candidates": [
+        {
+          "checkpoint": "checkpoint_epoch0090.pt",
+          "path": "results\\MR-TAE-noSwin\\checkpoints\\checkpoint_epoch0090.pt",
+          "epoch": 90,
+          "phase": null,
+          "per_snr_ncc": {
+            "-15": 0.1014837920665741,
+            "-10": 0.2603399455547333,
+            "-5": 0.533504843711853,
+            "0": 0.8476478457450867,
+            "5": 0.9483354091644287,
+            "10": 0.9762960076332092,
+            "15": 0.9857170581817627
+          },
+          "synthetic_ncc_mean": 0.6648,
+          "synthetic_ncc_minus15db": 0.1015
+        },
+        {
+          "checkpoint": "checkpoint_epoch0100.pt",
+          "path": "results\\MR-TAE-noSwin\\checkpoints\\checkpoint_epoch0100.pt",
+          "epoch": 100,
+          "phase": null,
+          "per_snr_ncc": {
+            "-15": 0.06978297233581543,
+            "-10": 0.21224981546401978,
+            "-5": 0.5055340528488159,
+            "0": 0.843062162399292,
+            "5": 0.9466098546981812,
+            "10": 0.9747574329376221,
+            "15": 0.9848688244819641
+          },
+          "synthetic_ncc_mean": 0.6481,
+          "synthetic_ncc_minus15db": 0.0698
+        },
+        {
+          "checkpoint": "checkpoint_epoch0080.pt",
+          "path": "results\\MR-TAE-noSwin\\checkpoints\\checkpoint_epoch0080.pt",
+          "epoch": 80,
+          "phase": null,
+          "per_snr_ncc": {
+            "-15": 0.0636925995349884,
+            "-10": 0.20546551048755646,
+            "-5": 0.5074487924575806,
+            "0": 0.8427927494049072,
+            "5": 0.9456257820129395,
+            "10": 0.9737339615821838,
+            "15": 0.9836204648017883
+          },
+          "synthetic_ncc_mean": 0.6461,
+          "synthetic_ncc_minus15db": 0.0637
+        }
+      ],
+      "selected_checkpoint": "checkpoint_epoch0090.pt",
+      "selected_path": "results\\MR-TAE-noSwin\\checkpoints\\checkpoint_epoch0090.pt",
+      "selected_epoch": 90,
+      "selected_phase": null,
+      "selected_synthetic_ncc_mean": 0.6648,
+      "selected_synthetic_ncc_minus15db": 0.1015,
+      "skipped": true
+    },
+    "MR-TAE-noAttn": {
+      "model_id": "MR-TAE-noAttn",
+      "results_root": "results",
+      "selection_criterion": "max mean NCC across SNR levels; tie-break -15 dB",
+      "candidates": [
+        {
+          "checkpoint": "checkpoint_epoch0090.pt",
+          "path": "results\\MR-TAE-noAttn\\checkpoints\\checkpoint_epoch0090.pt",
+          "epoch": 90,
+          "phase": null,
+          "per_snr_ncc": {
+            "-15": 0.0559253990650177,
+            "-10": 0.3012511432170868,
+            "-5": 0.6227456331253052,
+            "0": 0.857698380947113,
+            "5": 0.9474963545799255,
+            "10": 0.9753938913345337,
+            "15": 0.9827376008033752
+          },
+          "synthetic_ncc_mean": 0.6776,
+          "synthetic_ncc_minus15db": 0.0559
+        },
+        {
+          "checkpoint": "checkpoint_epoch0100.pt",
+          "path": "results\\MR-TAE-noAttn\\checkpoints\\checkpoint_epoch0100.pt",
+          "epoch": 100,
+          "phase": null,
+          "per_snr_ncc": {
+            "-15": 0.046757202595472336,
+            "-10": 0.2919134497642517,
+            "-5": 0.6254239082336426,
+            "0": 0.8602320551872253,
+            "5": 0.9470201730728149,
+            "10": 0.9752935767173767,
+            "15": 0.9824107885360718
+          },
+          "synthetic_ncc_mean": 0.6756,
+          "synthetic_ncc_minus15db": 0.0468
+        },
+        {
+          "checkpoint": "checkpoint_epoch0080.pt",
+          "path": "results\\MR-TAE-noAttn\\checkpoints\\checkpoint_epoch0080.pt",
+          "epoch": 80,
+          "phase": null,
+          "per_snr_ncc": {
+            "-15": 0.04489003121852875,
+            "-10": 0.279349684715271,
+            "-5": 0.6114030480384827,
+            "0": 0.8524999618530273,
+            "5": 0.9461674690246582,
+            "10": 0.974550187587738,
+            "15": 0.9817805290222168
+          },
+          "synthetic_ncc_mean": 0.6701,
+          "synthetic_ncc_minus15db": 0.0449
+        }
+      ],
+      "selected_checkpoint": "checkpoint_epoch0090.pt",
+      "selected_path": "results\\MR-TAE-noAttn\\checkpoints\\checkpoint_epoch0090.pt",
+      "selected_epoch": 90,
+      "selected_phase": null,
+      "selected_synthetic_ncc_mean": 0.6776,
+      "selected_synthetic_ncc_minus15db": 0.0559,
+      "skipped": true
+    },
+    "MR-TAE-noMTL": {
+      "model_id": "MR-TAE-noMTL",
+      "results_root": "results",
+      "selection_criterion": "max mean NCC across SNR levels; tie-break -15 dB",
+      "candidates": [
+        {
+          "checkpoint": "checkpoint_epoch0090.pt",
+          "path": "results\\MR-TAE-noMTL\\checkpoints\\checkpoint_epoch0090.pt",
+          "epoch": 90,
+          "phase": null,
+          "per_snr_ncc": {
+            "-15": 0.034794606268405914,
+            "-10": 0.24840669333934784,
+            "-5": 0.5822386741638184,
+            "0": 0.8201144337654114,
+            "5": 0.9181053042411804,
+            "10": 0.9409977197647095,
+            "15": 0.9602657556533813
+          },
+          "synthetic_ncc_mean": 0.6436,
+          "synthetic_ncc_minus15db": 0.0348
+        },
+        {
+          "checkpoint": "checkpoint_epoch0100.pt",
+          "path": "results\\MR-TAE-noMTL\\checkpoints\\checkpoint_epoch0100.pt",
+          "epoch": 100,
+          "phase": null,
+          "per_snr_ncc": {
+            "-15": 0.041401635855436325,
+            "-10": 0.26674777269363403,
+            "-5": 0.5873033404350281,
+            "0": 0.8232126832008362,
+            "5": 0.9218155741691589,
+            "10": 0.9441078901290894,
+            "15": 0.9625601172447205
+          },
+          "synthetic_ncc_mean": 0.6496,
+          "synthetic_ncc_minus15db": 0.0414
+        },
+        {
+          "checkpoint": "checkpoint_epoch0080.pt",
+          "path": "results\\MR-TAE-noMTL\\checkpoints\\checkpoint_epoch0080.pt",
+          "epoch": 80,
+          "phase": null,
+          "per_snr_ncc": {
+            "-15": 0.041293736547231674,
+            "-10": 0.277194082736969,
+            "-5": 0.586101233959198,
+            "0": 0.8162304162979126,
+            "5": 0.922812819480896,
+            "10": 0.9403011202812195,
+            "15": 0.9599122405052185
+          },
+          "synthetic_ncc_mean": 0.6491,
+          "synthetic_ncc_minus15db": 0.0413
+        }
+      ],
+      "selected_checkpoint": "checkpoint_epoch0100.pt",
+      "selected_path": "results\\MR-TAE-noMTL\\checkpoints\\checkpoint_epoch0100.pt",
+      "selected_epoch": 100,
+      "selected_phase": null,
+      "selected_synthetic_ncc_mean": 0.6496,
+      "selected_synthetic_ncc_minus15db": 0.0414,
+      "selected_final_copy": "results\\MR-TAE-noMTL\\checkpoints\\selected_final.pt"
+    },
+    "MR-TAE-noWavelet": {
+      "model_id": "MR-TAE-noWavelet",
+      "results_root": "results",
+      "selection_criterion": "max mean NCC across SNR levels; tie-break -15 dB",
+      "candidates": [
+        {
+          "checkpoint": "checkpoint_epoch0090.pt",
+          "path": "results\\MR-TAE-noWavelet\\checkpoints\\checkpoint_epoch0090.pt",
+          "epoch": 90,
+          "phase": null,
+          "per_snr_ncc": {
+            "-15": 0.055732131004333496,
+            "-10": 0.13557292520999908,
+            "-5": 0.45287269353866577,
+            "0": 0.8570445775985718,
+            "5": 0.9474204778671265,
+            "10": 0.9761889576911926,
+            "15": 0.9832726120948792
+          },
+          "synthetic_ncc_mean": 0.6297,
+          "synthetic_ncc_minus15db": 0.0557
+        },
+        {
+          "checkpoint": "checkpoint_epoch0100.pt",
+          "path": "results\\MR-TAE-noWavelet\\checkpoints\\checkpoint_epoch0100.pt",
+          "epoch": 100,
+          "phase": null,
+          "per_snr_ncc": {
+            "-15": 0.0503666028380394,
+            "-10": 0.12531688809394836,
+            "-5": 0.4390697777271271,
+            "0": 0.8528860211372375,
+            "5": 0.9458798766136169,
+            "10": 0.9754823446273804,
+            "15": 0.9827085137367249
+          },
+          "synthetic_ncc_mean": 0.6245,
+          "synthetic_ncc_minus15db": 0.0504
+        },
+        {
+          "checkpoint": "checkpoint_epoch0080.pt",
+          "path": "results\\MR-TAE-noWavelet\\checkpoints\\checkpoint_epoch0080.pt",
+          "epoch": 80,
+          "phase": null,
+          "per_snr_ncc": {
+            "-15": 0.05199838802218437,
+            "-10": 0.1231715977191925,
+            "-5": 0.4512222707271576,
+            "0": 0.859876275062561,
+            "5": 0.9457337856292725,
+            "10": 0.9752340912818909,
+            "15": 0.9819704294204712
+          },
+          "synthetic_ncc_mean": 0.627,
+          "synthetic_ncc_minus15db": 0.052
+        }
+      ],
+      "selected_checkpoint": "checkpoint_epoch0090.pt",
+      "selected_path": "results\\MR-TAE-noWavelet\\checkpoints\\checkpoint_epoch0090.pt",
+      "selected_epoch": 90,
+      "selected_phase": null,
+      "selected_synthetic_ncc_mean": 0.6297,
+      "selected_synthetic_ncc_minus15db": 0.0557,
+      "selected_final_copy": "results\\MR-TAE-noWavelet\\checkpoints\\selected_final.pt"
+    },
+    "MR-TAE-noSwin-noBiGRU": {
+      "model_id": "MR-TAE-noSwin-noBiGRU",
+      "results_root": "results",
+      "candidates": [
+        {
+          "checkpoint": "best_phase3.pt",
+          "path": "results\\MR-TAE-noSwin-noBiGRU\\checkpoints\\best_phase3.pt",
+          "epoch": 103,
+          "synthetic_ncc_minus15db": 0.0822
+        },
+        {
+          "checkpoint": "checkpoint_epoch0090.pt",
+          "path": "results\\MR-TAE-noSwin-noBiGRU\\checkpoints\\checkpoint_epoch0090.pt",
+          "epoch": 90,
+          "synthetic_ncc_minus15db": 0.0559
+        },
+        {
+          "checkpoint": "checkpoint_epoch0100.pt",
+          "path": "results\\MR-TAE-noSwin-noBiGRU\\checkpoints\\checkpoint_epoch0100.pt",
+          "epoch": 100,
+          "synthetic_ncc_minus15db": 0.0869
+        },
+        {
+          "checkpoint": "checkpoint_epoch0110.pt",
+          "path": "results\\MR-TAE-noSwin-noBiGRU\\checkpoints\\checkpoint_epoch0110.pt",
+          "epoch": 110,
+          "synthetic_ncc_minus15db": 0.0824
+        },
+        {
+          "checkpoint": "last.pt",
+          "path": "results\\MR-TAE-noSwin-noBiGRU\\checkpoints\\last.pt",
+          "epoch": 110,
+          "synthetic_ncc_minus15db": 0.0829
+        }
+      ],
+      "selected_checkpoint": "checkpoint_epoch0100.pt",
+      "selected_path": "results\\MR-TAE-noSwin-noBiGRU\\checkpoints\\checkpoint_epoch0100.pt",
+      "selected_synthetic_ncc_minus15db": 0.0869,
+      "skipped": true
+    },
+    "MR-TAE-noSwin-noAttn": {
+      "model_id": "MR-TAE-noSwin-noAttn",
+      "results_root": "results",
+      "candidates": [
+        {
+          "checkpoint": "best_phase3.pt",
+          "path": "results\\MR-TAE-noSwin-noAttn\\checkpoints\\best_phase3.pt",
+          "epoch": 100,
+          "synthetic_ncc_minus15db": 0.0108
+        },
+        {
+          "checkpoint": "checkpoint_epoch0090.pt",
+          "path": "results\\MR-TAE-noSwin-noAttn\\checkpoints\\checkpoint_epoch0090.pt",
+          "epoch": 90,
+          "synthetic_ncc_minus15db": 0.0419
+        },
+        {
+          "checkpoint": "checkpoint_epoch0100.pt",
+          "path": "results\\MR-TAE-noSwin-noAttn\\checkpoints\\checkpoint_epoch0100.pt",
+          "epoch": 100,
+          "synthetic_ncc_minus15db": 0.0108
+        },
+        {
+          "checkpoint": "checkpoint_epoch0110.pt",
+          "path": "results\\MR-TAE-noSwin-noAttn\\checkpoints\\checkpoint_epoch0110.pt",
+          "epoch": 110,
+          "synthetic_ncc_minus15db": 0.0097
+        },
+        {
+          "checkpoint": "last.pt",
+          "path": "results\\MR-TAE-noSwin-noAttn\\checkpoints\\last.pt",
+          "epoch": 110,
+          "synthetic_ncc_minus15db": 0.0097
+        }
+      ],
+      "selected_checkpoint": "checkpoint_epoch0090.pt",
+      "selected_path": "results\\MR-TAE-noSwin-noAttn\\checkpoints\\checkpoint_epoch0090.pt",
+      "selected_synthetic_ncc_minus15db": 0.0419,
+      "skipped": true
+    },
+    "MR-TAE-noBiGRU-noAttn": {
+      "model_id": "MR-TAE-noBiGRU-noAttn",
+      "results_root": "results",
+      "selection_criterion": "max mean NCC across SNR levels; tie-break -15 dB",
+      "candidates": [
+        {
+          "checkpoint": "checkpoint_epoch0090.pt",
+          "path": "results\\MR-TAE-noBiGRU-noAttn\\checkpoints\\checkpoint_epoch0090.pt",
+          "epoch": 90,
+          "phase": null,
+          "per_snr_ncc": {
+            "-15": 0.12205154448747635,
+            "-10": 0.2688850164413452,
+            "-5": 0.5348567366600037,
+            "0": 0.7558313012123108,
+            "5": 0.8306304812431335,
+            "10": 0.8501859307289124,
+            "15": 0.8587540984153748
+          },
+          "synthetic_ncc_mean": 0.603,
+          "synthetic_ncc_minus15db": 0.1221
+        },
+        {
+          "checkpoint": "checkpoint_epoch0100.pt",
+          "path": "results\\MR-TAE-noBiGRU-noAttn\\checkpoints\\checkpoint_epoch0100.pt",
+          "epoch": 100,
+          "phase": null,
+          "per_snr_ncc": {
+            "-15": 0.025313084945082664,
+            "-10": 0.17338067293167114,
+            "-5": 0.496454119682312,
+            "0": 0.7208971977233887,
+            "5": 0.7926278710365295,
+            "10": 0.8114631175994873,
+            "15": 0.8222718834877014
+          },
+          "synthetic_ncc_mean": 0.5489,
+          "synthetic_ncc_minus15db": 0.0253
+        },
+        {
+          "checkpoint": "checkpoint_epoch0080.pt",
+          "path": "results\\MR-TAE-noBiGRU-noAttn\\checkpoints\\checkpoint_epoch0080.pt",
+          "epoch": 80,
+          "phase": null,
+          "per_snr_ncc": {
+            "-15": 0.0722511038184166,
+            "-10": 0.2768862843513489,
+            "-5": 0.5694283246994019,
+            "0": 0.7774323225021362,
+            "5": 0.8623806834220886,
+            "10": 0.8919180035591125,
+            "15": 0.9071739315986633
+          },
+          "synthetic_ncc_mean": 0.6225,
+          "synthetic_ncc_minus15db": 0.0723
+        }
+      ],
+      "selected_checkpoint": "checkpoint_epoch0080.pt",
+      "selected_path": "results\\MR-TAE-noBiGRU-noAttn\\checkpoints\\checkpoint_epoch0080.pt",
+      "selected_epoch": 80,
+      "selected_phase": null,
+      "selected_synthetic_ncc_mean": 0.6225,
+      "selected_synthetic_ncc_minus15db": 0.0723,
+      "selected_final_copy": "results\\MR-TAE-noBiGRU-noAttn\\checkpoints\\selected_final.pt"
+    },
+    "MR-TAE-FULL-LossB": {
+      "model_id": "MR-TAE-FULL-LossB",
+      "results_root": "results",
+      "selection_criterion": "max mean NCC across SNR levels; tie-break -15 dB",
+      "candidates": [
+        {
+          "checkpoint": "checkpoint_epoch0090.pt",
+          "path": "results\\MR-TAE-FULL-LossB\\checkpoints\\checkpoint_epoch0090.pt",
+          "epoch": 90,
+          "phase": null,
+          "per_snr_ncc": {
+            "-15": 0.14364448189735413,
+            "-10": 0.25903019309043884,
+            "-5": 0.5025213360786438,
+            "0": 0.7880709171295166,
+            "5": 0.8582019209861755,
+            "10": 0.8809451460838318,
+            "15": 0.8794335126876831
+          },
+          "synthetic_ncc_mean": 0.616,
+          "synthetic_ncc_minus15db": 0.1436
+        },
+        {
+          "checkpoint": "checkpoint_epoch0100.pt",
+          "path": "results\\MR-TAE-FULL-LossB\\checkpoints\\checkpoint_epoch0100.pt",
+          "epoch": 100,
+          "phase": null,
+          "per_snr_ncc": {
+            "-15": 0.2008235603570938,
+            "-10": 0.3446287214756012,
+            "-5": 0.6125727295875549,
+            "0": 0.8683533668518066,
+            "5": 0.9306444525718689,
+            "10": 0.9616623520851135,
+            "15": 0.9797976016998291
+          },
+          "synthetic_ncc_mean": 0.6998,
+          "synthetic_ncc_minus15db": 0.2008
+        },
+        {
+          "checkpoint": "checkpoint_epoch0110.pt",
+          "path": "results\\MR-TAE-FULL-LossB\\checkpoints\\checkpoint_epoch0110.pt",
+          "epoch": 110,
+          "phase": null,
+          "per_snr_ncc": {
+            "-15": 0.18013040721416473,
+            "-10": 0.31516700983047485,
+            "-5": 0.5659087300300598,
+            "0": 0.8210945129394531,
+            "5": 0.8851064443588257,
+            "10": 0.9073958396911621,
+            "15": 0.9151902198791504
+          },
+          "synthetic_ncc_mean": 0.6557,
+          "synthetic_ncc_minus15db": 0.1801
+        }
+      ],
+      "selected_checkpoint": "checkpoint_epoch0100.pt",
+      "selected_path": "results\\MR-TAE-FULL-LossB\\checkpoints\\checkpoint_epoch0100.pt",
+      "selected_epoch": 100,
+      "selected_phase": null,
+      "selected_synthetic_ncc_mean": 0.6998,
+      "selected_synthetic_ncc_minus15db": 0.2008,
+      "selected_final_copy": "results\\MR-TAE-FULL-LossB\\checkpoints\\selected_final.pt"
+    },
+    "MR-TAE-FULL-LossC": {
+      "model_id": "MR-TAE-FULL-LossC",
+      "results_root": "results",
+      "selection_criterion": "max mean NCC across SNR levels; tie-break -15 dB",
+      "candidates": [
+        {
+          "checkpoint": "checkpoint_epoch0090.pt",
+          "path": "results\\MR-TAE-FULL-LossC\\checkpoints\\checkpoint_epoch0090.pt",
+          "epoch": 90,
+          "phase": null,
+          "per_snr_ncc": {
+            "-15": 0.04811125621199608,
+            "-10": 0.259996622800827,
+            "-5": 0.5709118843078613,
+            "0": 0.815489649772644,
+            "5": 0.9113056659698486,
+            "10": 0.9509633779525757,
+            "15": 0.960701048374176
+          },
+          "synthetic_ncc_mean": 0.6454,
+          "synthetic_ncc_minus15db": 0.0481
+        },
+        {
+          "checkpoint": "checkpoint_epoch0100.pt",
+          "path": "results\\MR-TAE-FULL-LossC\\checkpoints\\checkpoint_epoch0100.pt",
+          "epoch": 100,
+          "phase": null,
+          "per_snr_ncc": {
+            "-15": 0.057703036814928055,
+            "-10": 0.2655137777328491,
+            "-5": 0.5698572397232056,
+            "0": 0.8168948888778687,
+            "5": 0.9151657223701477,
+            "10": 0.9565578699111938,
+            "15": 0.9676729440689087
+          },
+          "synthetic_ncc_mean": 0.6499,
+          "synthetic_ncc_minus15db": 0.0577
+        },
+        {
+          "checkpoint": "checkpoint_epoch0080.pt",
+          "path": "results\\MR-TAE-FULL-LossC\\checkpoints\\checkpoint_epoch0080.pt",
+          "epoch": 80,
+          "phase": null,
+          "per_snr_ncc": {
+            "-15": 0.05659359320998192,
+            "-10": 0.2630072236061096,
+            "-5": 0.5729486346244812,
+            "0": 0.8197223544120789,
+            "5": 0.9142311811447144,
+            "10": 0.9537007212638855,
+            "15": 0.963356614112854
+          },
+          "synthetic_ncc_mean": 0.6491,
+          "synthetic_ncc_minus15db": 0.0566
+        }
+      ],
+      "selected_checkpoint": "checkpoint_epoch0100.pt",
+      "selected_path": "results\\MR-TAE-FULL-LossC\\checkpoints\\checkpoint_epoch0100.pt",
+      "selected_epoch": 100,
+      "selected_phase": null,
+      "selected_synthetic_ncc_mean": 0.6499,
+      "selected_synthetic_ncc_minus15db": 0.0577,
+      "selected_final_copy": "results\\MR-TAE-FULL-LossC\\checkpoints\\selected_final.pt"
+    },
+    "MWCNN-BiGRU": {
+      "model_id": "MWCNN-BiGRU",
+      "results_root": "results",
+      "selection_criterion": "max mean NCC across SNR levels; tie-break -15 dB",
+      "candidates": [
+        {
+          "checkpoint": "checkpoint_epoch0090.pt",
+          "path": "results\\MWCNN-BiGRU\\checkpoints\\checkpoint_epoch0090.pt",
+          "epoch": 90,
+          "phase": null,
+          "per_snr_ncc": {
+            "-15": 0.08274140954017639,
+            "-10": 0.30015650391578674,
+            "-5": 0.6006404757499695,
+            "0": 0.8321800827980042,
+            "5": 0.9318931698799133,
+            "10": 0.9548410773277283,
+            "15": 0.968385636806488
+          },
+          "synthetic_ncc_mean": 0.6673,
+          "synthetic_ncc_minus15db": 0.0827
+        },
+        {
+          "checkpoint": "checkpoint_epoch0100.pt",
+          "path": "results\\MWCNN-BiGRU\\checkpoints\\checkpoint_epoch0100.pt",
+          "epoch": 100,
+          "phase": null,
+          "per_snr_ncc": {
+            "-15": 0.06302253156900406,
+            "-10": 0.28219300508499146,
+            "-5": 0.5973080992698669,
+            "0": 0.8287705779075623,
+            "5": 0.9284018874168396,
+            "10": 0.95245760679245,
+            "15": 0.9655909538269043
+          },
+          "synthetic_ncc_mean": 0.6597,
+          "synthetic_ncc_minus15db": 0.063
+        },
+        {
+          "checkpoint": "checkpoint_epoch0080.pt",
+          "path": "results\\MWCNN-BiGRU\\checkpoints\\checkpoint_epoch0080.pt",
+          "epoch": 80,
+          "phase": null,
+          "per_snr_ncc": {
+            "-15": 0.07068776339292526,
+            "-10": 0.28897780179977417,
+            "-5": 0.5963588953018188,
+            "0": 0.8322628736495972,
+            "5": 0.9307103157043457,
+            "10": 0.9538272619247437,
+            "15": 0.9677726626396179
+          },
+          "synthetic_ncc_mean": 0.6629,
+          "synthetic_ncc_minus15db": 0.0707
+        }
+      ],
+      "selected_checkpoint": "checkpoint_epoch0090.pt",
+      "selected_path": "results\\MWCNN-BiGRU\\checkpoints\\checkpoint_epoch0090.pt",
+      "selected_epoch": 90,
+      "selected_phase": null,
+      "selected_synthetic_ncc_mean": 0.6673,
+      "selected_synthetic_ncc_minus15db": 0.0827,
+      "selected_final_copy": "results\\MWCNN-BiGRU\\checkpoints\\selected_final.pt"
+    },
+    "UNet-BiGRU-Swin": {
+      "model_id": "UNet-BiGRU-Swin",
+      "results_root": "results",
+      "selection_criterion": "max mean NCC across SNR levels; tie-break -15 dB",
+      "candidates": [
+        {
+          "checkpoint": "checkpoint_epoch0090.pt",
+          "path": "results\\UNet-BiGRU-Swin\\checkpoints\\checkpoint_epoch0090.pt",
+          "epoch": 90,
+          "phase": null,
+          "per_snr_ncc": {
+            "-15": 0.12331236153841019,
+            "-10": 0.28617724776268005,
+            "-5": 0.5978938341140747,
+            "0": 0.8517282009124756,
+            "5": 0.9455522298812866,
+            "10": 0.9696118831634521,
+            "15": 0.9772610664367676
+          },
+          "synthetic_ncc_mean": 0.6788,
+          "synthetic_ncc_minus15db": 0.1233
+        },
+        {
+          "checkpoint": "checkpoint_epoch0100.pt",
+          "path": "results\\UNet-BiGRU-Swin\\checkpoints\\checkpoint_epoch0100.pt",
+          "epoch": 100,
+          "phase": null,
+          "per_snr_ncc": {
+            "-15": 0.13075195252895355,
+            "-10": 0.3205321431159973,
+            "-5": 0.6166384220123291,
+            "0": 0.8609693050384521,
+            "5": 0.9474820494651794,
+            "10": 0.9709916710853577,
+            "15": 0.9795178174972534
+          },
+          "synthetic_ncc_mean": 0.6896,
+          "synthetic_ncc_minus15db": 0.1308
+        },
+        {
+          "checkpoint": "checkpoint_epoch0080.pt",
+          "path": "results\\UNet-BiGRU-Swin\\checkpoints\\checkpoint_epoch0080.pt",
+          "epoch": 80,
+          "phase": null,
+          "per_snr_ncc": {
+            "-15": 0.1306508183479309,
+            "-10": 0.3077007532119751,
+            "-5": 0.6034257411956787,
+            "0": 0.8521755933761597,
+            "5": 0.9456024765968323,
+            "10": 0.9649407267570496,
+            "15": 0.9746352434158325
+          },
+          "synthetic_ncc_mean": 0.6827,
+          "synthetic_ncc_minus15db": 0.1307
+        }
+      ],
+      "selected_checkpoint": "checkpoint_epoch0100.pt",
+      "selected_path": "results\\UNet-BiGRU-Swin\\checkpoints\\checkpoint_epoch0100.pt",
+      "selected_epoch": 100,
+      "selected_phase": null,
+      "selected_synthetic_ncc_mean": 0.6896,
+      "selected_synthetic_ncc_minus15db": 0.1308,
+      "selected_final_copy": "results\\UNet-BiGRU-Swin\\checkpoints\\selected_final.pt"
+    }
+  }
+}

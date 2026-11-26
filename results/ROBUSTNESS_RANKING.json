@@ -1,0 +1,15 @@
+{
+  "MR-TAE-FULL": 0.4663,
+  "MR-TAE-noBiGRU-noAttn": 0.4436,
+  "MR-TAE-FULL-LossB": 0.4282,
+  "MR-TAE-noSwin-noAttn": 0.4247,
+  "MR-TAE-noSwin-noBiGRU": 0.423,
+  "UNet-BiGRU-Swin": 0.4193,
+  "MWCNN-BiGRU": 0.4122,
+  "MR-TAE-noAttn": 0.3952,
+  "MR-TAE-noSwin": 0.391,
+  "MR-TAE-noBiGRU": 0.3849,
+  "MR-TAE-noMTL": 0.381,
+  "MR-TAE-FULL-LossC": 0.3769,
+  "MR-TAE-noWavelet": 0.3517
+}

@@ -1,0 +1,129 @@
+% MR-TAE AE-PD Denoising — arXiv / thesis skeleton (Phase-2: fill prose)
+% Student: Oo Jian Hong 22004678
+% Build: pdflatex mr_tae_arxiv && bibtex mr_tae_arxiv && pdflatex mr_tae_arxiv && pdflatex mr_tae_arxiv
+\documentclass[conference]{IEEEtran}
+\usepackage{cite}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{url}
+\usepackage{hyperref}
+
+\graphicspath{{./}}
+
+\title{Multi-Resolution Transformer Autoencoder with Acoustic Emission Features for Partial-Discharge Denoising}
+
+\author{
+\IEEEauthorblockN{Oo Jian Hong}
+\IEEEauthorblockA{Department of Electrical Engineering\\
+Final Year Project Report / arXiv draft\\
+Email: (to be filled)}
+}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We present MR-TAE, a 1D denoising architecture combining multi-level wavelet (MWCNN) encoding, a BiGRU--Swin bottleneck, and dual outputs for denoised waveforms and PD segmentation masks. The model targets acoustic-emission (AE) partial-discharge monitoring with robustness across synthetic SNR sweeps and real Q.Lin laboratory recordings. This skeleton compiles with all figures and table placeholders; Phase-2 will insert quantitative prose and discussion.
+\end{abstract}
+
+\begin{IEEEkeywords}
+Partial discharge, acoustic emission, denoising, wavelet CNN, Swin Transformer, deep learning.
+\end{IEEEkeywords}
+
+\section{Introduction}
+Partial discharge (PD) acoustic emission signals acquired on asset insulation are often contaminated by broadband noise. Deep denoisers must generalise from synthetic training distributions to real piezoelectric AE channels. Figure~\ref{fig:sys} summarises the deployment context.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{fig1_system_overview.png}
+\caption{Monitored AE acquisition chain from PD source to alert.}
+\label{fig:sys}
+\end{figure}
+
+\section{Related Work}
+Classical denoisers (Wiener filtering, wavelet shrinkage) offer low latency but limited PD preservation under composite noise. Convolutional and transformer waveform denoisers (DnCNN, U-Net variants, CleanUNet) motivate our hybrid design~\cite{zhang2017beyond,ronneberger2015unet,kong2022speech,liu2021swin}.
+
+\section{Methodology}
+Figure~\ref{fig:arch} sketches MR-TAE-FULL with tensor shapes. Loss variants (A/B/C) trade synthetic fidelity against real-domain grounded NCC.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{fig2_ablation_results.png}
+\caption{Ablation and baselines: synthetic NCC (clean GT, blue) vs.\ real Q.Lin NCC (input-window pseudo-reference, orange). MR-TAE loss variants are highlighted.}
+\label{fig:ablate}
+\end{figure}
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{fig2_architecture.png}
+\caption{MR-TAE-FULL schematic: MWCNN encoder--bottleneck--decoder with dual heads.}
+\label{fig:arch}
+\end{figure*}
+
+\section{Experiments}
+\subsection{Datasets}
+Table~\ref{tab:dataset} summarises the Q.Lin real AE test split; synthetic windows follow the project frozen \texttt{test\_synthetic\_ae.pt} protocol.
+
+\input{table1_dataset.tex}
+
+\subsection{Waveform comparisons}
+Figure~\ref{fig:wave} compares clean, noisy, and denoised outputs across SNR columns.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{fig3_waveform_comparison.png}
+\caption{Qualitative denoising: clean, noisy, MR-TAE-FULL-LossB, MWCNN-BiGRU.}
+\label{fig:wave}
+\end{figure*}
+
+\subsection{Ablations}
+Figure~\ref{fig:ablate} compares loss variants and classical baselines; Table~\ref{tab:ablation} lists all thirteen trained variants.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{fig4_ablation_ncc_bar.png}
+\caption{Full thirteen-model ablation (synthetic vs.\ real input-referenced NCC).}
+\label{fig:ablate_full}
+\end{figure}
+
+\input{table2_ablation.tex}
+
+\subsection{SNR sweep and loss study}
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{fig5_snr_sweep.png}
+\caption{Synthetic NCC vs input SNR for the top five real-NCC models.}
+\label{fig:snr}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{fig6_loss_comparison.png}
+\caption{LossA vs LossB vs LossC: synthetic and real NCC means.}
+\label{fig:loss}
+\end{figure}
+
+\subsection{Efficiency}
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{fig7_efficiency_scatter.png}
+\caption{Parameter count vs real NCC; marker area $\propto$ batch-1 latency.}
+\label{fig:eff}
+\end{figure}
+
+\subsection{External baselines}
+\input{table3_comparison.tex}
+
+\section{Discussion}
+(To be filled: grounded vs input-referenced NCC, crossover SNR, deployment constraints.)
+
+\section{Conclusion}
+(To be filled: contributions and future field trials.)
+
+\nocite{*}
+
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+
+\end{document}

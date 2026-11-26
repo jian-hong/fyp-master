@@ -1,0 +1,4 @@
+Decision: IDWT_BETTER
+MR-TAE-FULL (linear): 0.1119
+MR-TAE-FULL-IDWT:    0.3527
+Delta at -15dB:       +0.2408

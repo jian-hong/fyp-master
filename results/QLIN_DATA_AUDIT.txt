@@ -1,0 +1,12 @@
+data1.0mm.mat:
+  data10mm: shape=(200, 1000000), dtype=float64
+     min=-5.0000, max=4.9976, mean=-0.0377, std=0.0225
+data1.8mm.mat:
+  data18mm: shape=(200, 1000000), dtype=float64
+     min=-5.0000, max=4.9976, mean=-0.0373, std=0.1017
+data2.0mm.mat:
+  data20mm: shape=(200, 1000000), dtype=float64
+     min=-4.6606, max=4.9976, mean=-0.0378, std=0.1025
+data2.5mm.mat:
+  data25mm: shape=(200, 1000000), dtype=float64
+     min=-4.8242, max=4.9976, mean=-0.0378, std=0.1127
